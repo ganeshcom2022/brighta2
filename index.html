@@ -57,85 +57,309 @@
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Extra polish (safe, no framework change) -->
+    <!-- Page-level polish (no framework change) -->
     <style>
-      /* Brand balance */
-      .navbar-brand img { height: 44px; width: auto; margin-right: 10px; }
-      .navbar-brand .brand-text { font-weight: 700; letter-spacing: .2px; }
-      .navbar-brand .brand-sub { display: inline-block; font-size: 12px; opacity: .92; margin-left: 6px; }
+      :root{
+        --brand-navy:#0b1f3a;
+        --brand-yellow:#f5e84a;
+        --text:#122033;
+        --muted:#5c6674;
+        --card:#ffffff;
+        --line:rgba(11,31,58,.12);
+        --shadow:0 14px 34px rgba(0,0,0,.10);
+        --shadow2:0 18px 44px rgba(0,0,0,.14);
+        --radius:14px;
+      }
 
-      /* Hero CTA */
-      .hero-cta-row .btn { margin-right: 10px; margin-bottom: 10px; }
-      .btn-outline-light { color: #fff; border: 1px solid rgba(255,255,255,.7); background: transparent; }
-      .btn-outline-light:hover { background: rgba(255,255,255,.12); }
+      html{scroll-behavior:smooth;}
+      body{color:var(--text);}
+
+      /* Accessibility / focus */
+      a:focus, button:focus{
+        outline: 3px solid rgba(245,232,74,.75);
+        outline-offset: 3px;
+      }
+
+      /* Top bar */
+      .wrap{background: #07182f;}
+      .wrap .phone, .wrap .phone a{color:#fff;}
+      .wrap .mailus{opacity:.85; margin-right:6px;}
+      .wrap .social-media a{
+        background: rgba(255,255,255,.10);
+        color:#fff;
+        width:36px; height:36px;
+        border-radius:10px;
+        margin-left:8px;
+        transition: transform .2s ease, background .2s ease;
+      }
+      .wrap .social-media a:hover{
+        transform: translateY(-2px);
+        background: rgba(255,255,255,.16);
+      }
+
+      /* Navbar brand balance */
+      .navbar-brand{
+        display:flex; align-items:center;
+        gap:10px;
+      }
+      .navbar-brand img{
+        height: 46px;
+        width:auto;
+        display:block;
+      }
+      .navbar-brand .brand-text{
+        font-weight:800;
+        letter-spacing:.2px;
+        line-height:1;
+      }
+      .navbar-brand .brand-sub{
+        display:inline-block;
+        font-size:12px;
+        opacity:.92;
+        letter-spacing:.2px;
+        margin-left:6px;
+      }
+
+      /* Navbar “shrink” effect */
+      .ftco-navbar-light.scrolled{
+        box-shadow: 0 10px 26px rgba(0,0,0,.10);
+        backdrop-filter: blur(10px);
+      }
+
+      /* Hero */
+      .hero-wrap .overlay{
+        background: linear-gradient(90deg, rgba(11,31,58,.78), rgba(11,31,58,.55), rgba(11,31,58,.35));
+      }
+      .hero-wrap h1{
+        letter-spacing:-.3px;
+        text-shadow: 0 18px 34px rgba(0,0,0,.26);
+      }
+      .hero-wrap .subheading{
+        display:inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(245,232,74,.14);
+        border: 1px solid rgba(245,232,74,.30);
+      }
+      .hero-cta-row .btn{margin-right:10px; margin-bottom:10px;}
+      .btn-outline-light{
+        color:#fff;
+        border:1px solid rgba(255,255,255,.75);
+        background: transparent;
+      }
+      .btn-outline-light:hover{background: rgba(255,255,255,.12); color:#fff;}
 
       /* Trust bar */
-      .trust-bar {
+      .trust-bar{
         margin-top: 16px;
         padding: 10px 12px;
-        border-radius: 10px;
+        border-radius: 12px;
         background: rgba(255,255,255,.10);
         border: 1px solid rgba(255,255,255,.18);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px 14px;
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px 14px;
       }
-      .trust-item { display: inline-flex; align-items: center; color: rgba(255,255,255,.95); font-size: 14px; }
-      .trust-item .fa { margin-right: 8px; }
-
-      /* Premium cards */
-      .card-soft {
-        background: #fff;
-        border-radius: 14px;
-        box-shadow: 0 12px 30px rgba(0,0,0,.08);
-        overflow: hidden;
-      }
-
-      /* Availability badge */
-      .availability-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 14px;
-        border-radius: 12px;
-        background: rgba(11,31,58,.06);
-        border: 1px solid rgba(11,31,58,.10);
-        font-weight: 600;
-      }
-
-      /* Team cards (your screenshot style) */
-      .team-card {
-        background: #fff;
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-        transition: transform .3s ease, box-shadow .3s ease;
-      }
-      .team-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
-      .team-img { height: 320px; background-size: cover; background-position: center; }
-      .team-info { background: #f5e84a; text-align: center; padding: 18px 15px; }
-      .team-info h3 { margin: 0; font-size: 20px; font-weight: 700; color: #222; }
-      .team-info span {
-        display: inline-block;
-        margin-top: 6px;
+      .trust-item{
+        display:inline-flex;
+        align-items:center;
+        color: rgba(255,255,255,.95);
         font-size: 14px;
-        padding: 4px 12px;
-        border-radius: 20px;
-        background: rgba(0,0,0,0.12);
-        color: #222;
+      }
+      .trust-item i{margin-right:8px;}
+
+      /* Premium card */
+      .card-soft{
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0,0,0,.04);
+      }
+
+      /* Services hover */
+      .services{
+        transition: transform .22s ease, box-shadow .22s ease;
+        border-radius: 12px;
+      }
+      .services:hover{
+        transform: translateY(-4px);
+      }
+
+      /* About/Operations: ops panel overlay on image */
+      .img{position:relative; min-height: 520px;}
+      .ops-panel{
+        width: min(92%, 430px);
+        margin: 0 auto;
+        background: rgba(255,255,255,.92);
+        border: 1px solid rgba(11,31,58,.12);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: 18px 18px 16px;
+        backdrop-filter: blur(8px);
+      }
+      .ops-panel h2{
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 6px;
+        color: var(--brand-navy);
+      }
+      .ops-panel p{color: var(--muted); margin-bottom: 12px;}
+      .ops-bullets{
+        margin: 0 0 14px 0;
+        padding: 0 0 0 18px;
+        color: #233244;
+      }
+      .ops-bullets li{margin-bottom: 6px;}
+      .emergency-cta{
+        border-top: 1px dashed rgba(11,31,58,.18);
+        padding-top: 12px;
+      }
+      .emergency-cta .label{
+        font-size: 12px;
+        letter-spacing: .3px;
+        text-transform: uppercase;
+        opacity: .75;
+        margin-bottom: 6px;
+      }
+      .emergency-cta .phone{
+        display:inline-block;
+        font-weight: 900;
+        font-size: 20px;
+        color: var(--brand-navy);
+      }
+      .emergency-cta .note{
+        margin-top: 6px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .emergency-cta .abn{
+        margin-top: 8px;
+        font-size: 13px;
+        color: #2b3a4e;
+      }
+
+      /* About highlight chips */
+      .about-highlights{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      @media (min-width: 992px){
+        .about-highlights{grid-template-columns: 1fr;}
+      }
+      .about-chip{
+        border: 1px solid rgba(11,31,58,.10);
+        border-radius: 14px;
+        padding: 14px 14px;
+        background: rgba(11,31,58,.03);
+      }
+      .about-chip strong{
+        display:block;
+        font-weight: 800;
+        color: var(--brand-navy);
+        margin-bottom: 4px;
+      }
+      .about-chip span{color: var(--muted);}
+
+      /* Team cards: enforce your screenshot-like look even if .staff exists in style.css */
+      .staff{
+        background:#fff;
+        border-radius: 14px;
+        overflow:hidden;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0,0,0,.04);
+        transition: transform .25s ease, box-shadow .25s ease;
+        width:100%;
+      }
+      .staff:hover{
+        transform: translateY(-6px);
+        box-shadow: var(--shadow2);
+      }
+      .staff .img-wrap{min-height: 320px;}
+      .staff .img{
+        background-size: cover;
+        background-position: center;
+        min-height: 320px;
+      }
+      .staff .text{
+        background: var(--brand-yellow);
+        padding: 18px 14px 16px !important;
+      }
+      .staff h3{
+        margin:0;
+        font-size: 20px;
+        font-weight: 900;
+        color: #1a1a1a;
+      }
+      .team-role{
+        display:inline-block;
+        margin-top: 8px;
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(0,0,0,.12);
+        color: #1a1a1a;
+        font-weight: 700;
+      }
+
+      /* Testimonials: tidy spacing */
+      .testimony-wrap{
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 14px 30px rgba(0,0,0,.08);
+        border: 1px solid rgba(0,0,0,.04);
+      }
+      .testimony-wrap .icon{
+        width:44px; height:44px;
+        border-radius: 12px;
+        background: rgba(11,31,58,.08);
+        margin-left: 18px;
+      }
+
+      /* Recent work cards */
+      .work{
+        border-radius: 14px;
+        overflow:hidden;
+        box-shadow: 0 14px 30px rgba(0,0,0,.08);
+        border: 1px solid rgba(0,0,0,.04);
+        transition: transform .25s ease, box-shadow .25s ease;
+      }
+      .work:hover{
+        transform: translateY(-6px);
+        box-shadow: 0 18px 42px rgba(0,0,0,.12);
       }
 
       /* Map */
-      .map-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
-      .map-wrap iframe { width: 100%; height: 380px; border: 0; display: block; }
+      .map-wrap{
+        border-radius: 14px;
+        overflow:hidden;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0,0,0,.04);
+      }
+      .map-wrap iframe{width:100%; height: 380px; border:0; display:block;}
 
       /* Footer */
-      .footer .footer-heading { font-weight: 700; }
-      .footer .mini { opacity: .86; font-size: 14px; }
-      .footer .legal { opacity: .8; font-size: 13px; }
+      .footer .footer-heading{font-weight: 900;}
+      .footer .mini{opacity:.86; font-size: 14px;}
+      .footer .legal{opacity:.80; font-size: 13px;}
+      .footer a{transition: opacity .2s ease;}
+      .footer a:hover{opacity:.85;}
 
-      /* Focus */
-      a:focus { outline: 3px solid rgba(245,232,74,.7); outline-offset: 3px; }
+      /* Animation system */
+      .reveal{
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      .reveal.is-visible{
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce){
+        html{scroll-behavior:auto;}
+        .reveal{opacity:1; transform:none;}
+        .animated{animation: none !important;}
+      }
     </style>
   </head>
 
@@ -174,8 +398,10 @@
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="images/brighta-logo.png" alt="Brighta Property Services logo" />
-          <span class="brand-text">Brighta</span>
-          <span class="brand-sub">Property Services</span>
+          <div class="d-flex align-items-baseline">
+            <span class="brand-text">Brighta</span>
+            <span class="brand-sub">Property Services</span>
+          </div>
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -201,124 +427,144 @@
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-7 ftco-animate">
-            <h2 class="subheading">Trusted cleaning & property care across Sydney</h2>
-            <h1 class="mb-3">Residential, End-of-Lease & Commercial Cleaning — Delivered to a Consistent Standard</h1>
-            <p class="mb-3">
-              Defined scopes, quality checklists, and responsive service delivery — built for tenants, homeowners, and commercial sites.
-            </p>
+          <div class="col-md-7">
+            <div class="reveal" data-animate="fadeInUp">
+              <h2 class="subheading">Trusted cleaning &amp; property care across Sydney</h2>
+              <h1 class="mb-3">Residential, End-of-Lease &amp; Commercial Cleaning — Delivered to a Consistent Standard</h1>
+              <p class="mb-3">
+                Defined scopes, quality checklists, and responsive service delivery — built for tenants, homeowners, and commercial sites.
+              </p>
 
-            <div class="hero-cta-row">
-              <a href="contact.html" class="btn btn-primary py-2 px-4">REQUEST A QUOTE</a>
-              <a href="tel:+61424211382" class="btn btn-outline-light py-2 px-4">CALL NOW</a>
-              <a href="services.html" class="btn btn-secondary py-2 px-4">VIEW SERVICES</a>
-            </div>
+              <div class="hero-cta-row">
+                <a href="contact.html" class="btn btn-primary py-2 px-4">REQUEST A QUOTE</a>
+                <a href="tel:+61424211382" class="btn btn-outline-light py-2 px-4">CALL NOW</a>
+                <a href="services.html" class="btn btn-secondary py-2 px-4">VIEW SERVICES</a>
+              </div>
 
-            <div class="trust-bar ftco-animate" aria-label="Trust signals">
-              <span class="trust-item"><i class="fa fa-check-circle"></i> ABN Registered</span>
-              <span class="trust-item"><i class="fa fa-list-alt"></i> Quality Checklists</span>
-              <span class="trust-item"><i class="fa fa-bolt"></i> Fast Response</span>
-              <span class="trust-item"><i class="fa fa-map-marker"></i> All Sydney Areas</span>
+              <div class="trust-bar" aria-label="Trust signals">
+                <span class="trust-item"><i class="fa fa-check-circle"></i> ABN Registered</span>
+                <span class="trust-item"><i class="fa fa-list-alt"></i> Quality Checklists</span>
+                <span class="trust-item"><i class="fa fa-bolt"></i> Fast Response</span>
+                <span class="trust-item"><i class="fa fa-map-marker"></i> All Sydney Areas</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <!-- Services -->
     <section class="ftco-section" id="services">
       <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
-          <div class="col-md-8 heading-section text-center ftco-animate">
-            <span class="subheading">Services</span>
-            <h2>Cleaning Services Across Sydney</h2>
-            <p class="mb-0">Clear inclusions. Consistent delivery. Built for residential and commercial needs.</p>
+          <div class="col-md-8 heading-section text-center">
+            <div class="reveal" data-animate="fadeInUp">
+              <span class="subheading">Services</span>
+              <h2>Cleaning Services Across Sydney</h2>
+              <p class="mb-0">Clear inclusions. Consistent delivery. Built for residential and commercial needs.</p>
+            </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-6 col-lg-4 services ftco-animate">
-            <div class="d-block d-flex">
-              <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-workplace"></span></div>
-              <div class="media-body pl-3">
-                <h3 class="heading">Office & Commercial Cleaning</h3>
-                <p>Ongoing cleaning for offices and commercial sites with structured checklists and QA.</p>
-                <p><a href="services.html" class="btn-custom">Read more</a></p>
+          <div class="col-md-6 col-lg-4 services">
+            <div class="reveal" data-animate="fadeInUp">
+              <div class="d-block d-flex">
+                <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-workplace"></span></div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">Office &amp; Commercial Cleaning</h3>
+                  <p>Ongoing cleaning for offices and commercial sites with structured checklists and QA.</p>
+                  <p><a href="services.html" class="btn-custom">Read more</a></p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 services ftco-animate">
-            <div class="d-block d-flex">
-              <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-kitchen"></span></div>
-              <div class="media-body pl-3">
-                <h3 class="heading">End-of-Lease Cleaning</h3>
-                <p>Detail-focused vacate cleaning designed to help meet inspection expectations.</p>
-                <p><a href="services.html" class="btn-custom">Read more</a></p>
+          <div class="col-md-6 col-lg-4 services">
+            <div class="reveal" data-animate="fadeInUp">
+              <div class="d-block d-flex">
+                <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-kitchen"></span></div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">End-of-Lease Cleaning</h3>
+                  <p>Detail-focused vacate cleaning designed to help meet inspection expectations.</p>
+                  <p><a href="services.html" class="btn-custom">Read more</a></p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 services ftco-animate">
-            <div class="d-block d-flex">
-              <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-rug"></span></div>
-              <div class="media-body pl-3">
-                <h3 class="heading">Deep Cleaning</h3>
-                <p>High-impact cleaning for kitchens, bathrooms, and high-touch areas.</p>
-                <p><a href="services.html" class="btn-custom">Read more</a></p>
+          <div class="col-md-6 col-lg-4 services">
+            <div class="reveal" data-animate="fadeInUp">
+              <div class="d-block d-flex">
+                <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-rug"></span></div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">Deep Cleaning</h3>
+                  <p>High-impact cleaning for kitchens, bathrooms, and high-touch areas.</p>
+                  <p><a href="services.html" class="btn-custom">Read more</a></p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 services ftco-animate">
-            <div class="d-block d-flex">
-              <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-cleaning"></span></div>
-              <div class="media-body pl-3">
-                <h3 class="heading">Regular Home Cleaning</h3>
-                <p>Weekly or fortnightly service delivery to keep your home consistently clean.</p>
-                <p><a href="services.html" class="btn-custom">Read more</a></p>
+          <div class="col-md-6 col-lg-4 services">
+            <div class="reveal" data-animate="fadeInUp">
+              <div class="d-block d-flex">
+                <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-cleaning"></span></div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">Regular Home Cleaning</h3>
+                  <p>Weekly or fortnightly service delivery to keep your home consistently clean.</p>
+                  <p><a href="services.html" class="btn-custom">Read more</a></p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 services ftco-animate">
-            <div class="d-block d-flex">
-              <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-balcony"></span></div>
-              <div class="media-body pl-3">
-                <h3 class="heading">Strata & Common Areas</h3>
-                <p>Cleaning for lobbies, hallways, and shared areas with reliable scheduling.</p>
-                <p><a href="services.html" class="btn-custom">Read more</a></p>
+          <div class="col-md-6 col-lg-4 services">
+            <div class="reveal" data-animate="fadeInUp">
+              <div class="d-block d-flex">
+                <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-balcony"></span></div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">Strata &amp; Common Areas</h3>
+                  <p>Cleaning for lobbies, hallways, and shared areas with reliable scheduling.</p>
+                  <p><a href="services.html" class="btn-custom">Read more</a></p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 services ftco-animate">
-            <div class="d-block d-flex">
-              <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-vacuum-cleaner"></span></div>
-              <div class="media-body pl-3">
-                <h3 class="heading">Move-In / Move-Out Support</h3>
-                <p>Cleaning support to help prepare properties for the next occupant or listing.</p>
-                <p><a href="services.html" class="btn-custom">Read more</a></p>
+          <div class="col-md-6 col-lg-4 services">
+            <div class="reveal" data-animate="fadeInUp">
+              <div class="d-block d-flex">
+                <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-vacuum-cleaner"></span></div>
+                <div class="media-body pl-3">
+                  <h3 class="heading">Move-In / Move-Out Support</h3>
+                  <p>Cleaning support to help prepare properties for the next occupant or listing.</p>
+                  <p><a href="services.html" class="btn-custom">Read more</a></p>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <div class="row justify-content-center mt-4">
-          <div class="col-md-8 text-center ftco-animate">
-            <a href="services.html" class="btn btn-primary px-4 py-3">View All Services</a>
-            <a href="contact.html" class="btn btn-secondary px-4 py-3">Request a Quote</a>
+          <div class="col-md-8 text-center">
+            <div class="reveal" data-animate="fadeInUp">
+              <a href="services.html" class="btn btn-primary px-4 py-3">View All Services</a>
+              <a href="contact.html" class="btn btn-secondary px-4 py-3">Request a Quote</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
-   <!-- About / Operations -->
-    <section class="ftco-section ftco-no-pt ftco-no-pb">
+
+    <!-- About / Operations -->
+    <section class="ftco-section ftco-no-pt ftco-no-pb" id="about-ops">
       <div class="container">
         <div class="row d-flex no-gutters">
           <!-- Left visual + operations panel -->
           <div class="col-md-6 d-flex">
             <div class="img d-flex align-items-center justify-content-center py-5 py-md-0" style="background-image:url(images/about.jpg);">
-              <div class="ops-panel ftco-animate">
+              <div class="ops-panel reveal" data-animate="fadeInUp">
                 <div class="ops-head">
                   <h2>24/7 Operations &amp; Emergency Support</h2>
                   <p>We work around your schedule — including evenings, weekends, and urgent requests.</p>
@@ -334,9 +580,9 @@
                 </div>
 
                 <div class="emergency-cta">
-                  <div class="label">Emergency line</div>
+                  <div class="label">Operations line</div>
                   <a class="phone" href="tel:+61424211382">0424 211 382</a>
-                  <div class="note">Operations line — fast response for urgent requests.</div>
+                  <div class="note">Fast response for urgent requests.</div>
                   <div class="abn"><strong>ABN:</strong> 67 154 216 436</div>
                 </div>
               </div>
@@ -346,27 +592,29 @@
           <!-- Right content -->
           <div class="col-md-6 pl-md-5 pt-md-5">
             <div class="row justify-content-start py-5">
-              <div class="col-md-12 heading-section ftco-animate">
-                <span class="subheading">Welcome to Brighta Property Services</span>
-                <h2 class="mb-4">Reliable Cleaning &amp; Property Services Across Sydney</h2>
+              <div class="col-md-12 heading-section">
+                <div class="reveal" data-animate="fadeInUp">
+                  <span class="subheading">Welcome to Brighta Property Services</span>
+                  <h2 class="mb-4">Reliable Cleaning &amp; Property Services Across Sydney</h2>
 
-                <p>
-                  Brighta Property Services is a Sydney-based provider delivering dependable outcomes for offices, childcare centres, strata buildings, and managed properties.
-                  We operate with clear standards, consistent supervision, and quality assurance — so every site is maintained to a professional level.
-                </p>
+                  <p>
+                    Brighta Property Services delivers dependable outcomes for offices, childcare centres, strata buildings, and managed properties.
+                    We operate with clear standards, consistent supervision, and quality assurance — so every site is maintained to a professional level.
+                  </p>
 
-                <div class="about-highlights">
-                  <div class="about-chip">
-                    <strong>Quality Assurance</strong>
-                    <span>Routine checks and supervision to maintain consistent service delivery.</span>
-                  </div>
-                  <div class="about-chip">
-                    <strong>Fast Communication</strong>
-                    <span>Direct operations contact for scheduling, updates, and urgent requests.</span>
-                  </div>
-                  <div class="about-chip">
-                    <strong>Flexible Service</strong>
-                    <span>Tailored service plans for commercial, strata, and childcare environments.</span>
+                  <div class="about-highlights">
+                    <div class="about-chip">
+                      <strong>Quality Assurance</strong>
+                      <span>Routine checks and supervision to maintain consistent service delivery.</span>
+                    </div>
+                    <div class="about-chip">
+                      <strong>Fast Communication</strong>
+                      <span>Direct operations contact for scheduling, updates, and urgent requests.</span>
+                    </div>
+                    <div class="about-chip">
+                      <strong>Flexible Service</strong>
+                      <span>Tailored service plans for commercial, strata, and childcare environments.</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -374,35 +622,41 @@
 
             <!-- Counters -->
             <div class="row ftco-counter py-5" id="section-counter">
-              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
-                <div class="block-18">
-                  <div class="text">
-                    <strong class="number" data-number="1">0</strong>
-                  </div>
-                  <div class="text">
-                    <span>Years of <br />Experience</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
-                <div class="block-18">
-                  <div class="text">
-                    <strong class="number" data-number="100">0</strong>
-                  </div>
-                  <div class="text">
-                    <span>Happy <br />Customers</span>
+              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap">
+                <div class="reveal" data-animate="fadeInUp">
+                  <div class="block-18">
+                    <div class="text">
+                      <strong class="number" data-number="1">0</strong>
+                    </div>
+                    <div class="text">
+                      <span>Years of <br />Experience</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
-                <div class="block-18">
-                  <div class="text">
-                    <strong class="number" data-number="30">0</strong>
+              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap">
+                <div class="reveal" data-animate="fadeInUp">
+                  <div class="block-18">
+                    <div class="text">
+                      <strong class="number" data-number="100">0</strong>
+                    </div>
+                    <div class="text">
+                      <span>Happy <br />Customers</span>
+                    </div>
                   </div>
-                  <div class="text">
-                    <span>Buildings <br />Cleaned</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap">
+                <div class="reveal" data-animate="fadeInUp">
+                  <div class="block-18">
+                    <div class="text">
+                      <strong class="number" data-number="30">0</strong>
+                    </div>
+                    <div class="text">
+                      <span>Buildings <br />Cleaned</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -414,51 +668,50 @@
     </section>
 
     <!-- Team -->
-    <section class="ftco-section">
+    <section class="ftco-section" id="team">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-lg-3 pr-md-4 pb-lg-0 pb-4">
-            <div class="heading-section ftco-animate text-center text-lg-left">
-              <span class="subheading">Team &amp; Leadership</span>
-              <h2>Our Team</h2>
-              <p>
-                A hands-on leadership team focused on consistency, accountability, and high service standards across every site.
-              </p>
-              <p><a href="contact.html" class="btn btn-secondary">Talk to Our Team</a></p>
+            <div class="heading-section text-center text-lg-left">
+              <div class="reveal" data-animate="fadeInUp">
+                <span class="subheading">Team &amp; Leadership</span>
+                <h2>Our Team</h2>
+                <p>A hands-on leadership team focused on consistency, accountability, and high service standards across every site.</p>
+                <p><a href="contact.html" class="btn btn-secondary">Talk to Our Team</a></p>
+              </div>
             </div>
           </div>
 
-          <!-- Staff cards (using your current filenames) -->
-          <div class="col-md-4 col-lg-3 ftco-animate d-flex">
-            <div class="staff">
+          <div class="col-md-4 col-lg-3 d-flex">
+            <div class="staff reveal" data-animate="fadeInUp">
               <div class="img-wrap d-flex align-items-stretch">
                 <div class="img align-self-stretch" style="background-image: url(images/staff-1.png);"></div>
               </div>
-              <div class="text pt-3 px-3 pb-4 text-center">
+              <div class="text text-center">
                 <h3>Binaya GC</h3>
                 <span class="team-role">Commercial Operations Manager</span>
               </div>
             </div>
           </div>
 
-          <div class="col-md-4 col-lg-3 ftco-animate d-flex">
-            <div class="staff">
+          <div class="col-md-4 col-lg-3 d-flex">
+            <div class="staff reveal" data-animate="fadeInUp">
               <div class="img-wrap d-flex align-items-stretch">
                 <div class="img align-self-stretch" style="background-image: url(images/staff-2.png);"></div>
               </div>
-              <div class="text pt-3 px-3 pb-4 text-center">
+              <div class="text text-center">
                 <h3>Sangit Sharma</h3>
                 <span class="team-role">Quality Assurance Supervisor</span>
               </div>
             </div>
           </div>
 
-          <div class="col-md-4 col-lg-3 ftco-animate d-flex">
-            <div class="staff">
+          <div class="col-md-4 col-lg-3 d-flex">
+            <div class="staff reveal" data-animate="fadeInUp">
               <div class="img-wrap d-flex align-items-stretch">
                 <div class="img align-self-stretch" style="background-image: url(images/staff-3.png);"></div>
               </div>
-              <div class="text pt-3 px-3 pb-4 text-center">
+              <div class="text text-center">
                 <h3>Ganesh Khatri</h3>
                 <span class="team-role">On-Site Services Manager</span>
               </div>
@@ -469,28 +722,31 @@
       </div>
     </section>
 
-    <!-- Testimonials (7 slides) -->
-    <section class="ftco-section testimony-section bg-light">
+    <!-- Testimonials -->
+    <section class="ftco-section testimony-section bg-light" id="testimonials">
       <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <span class="subheading">Testimonials</span>
-            <h2>Happy Customers</h2>
-            <p class="mb-0">Feedback focused on reliability, quality, and communication.</p>
+          <div class="col-md-7 heading-section text-center">
+            <div class="reveal" data-animate="fadeInUp">
+              <span class="subheading">Testimonials</span>
+              <h2>Happy Customers</h2>
+              <p class="mb-0">Feedback focused on reliability, quality, and communication.</p>
+            </div>
           </div>
         </div>
 
-        <div class="row ftco-animate">
+        <div class="row">
           <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel ftco-owl">
+            <div class="carousel-testimony owl-carousel ftco-owl reveal" data-animate="fadeInUp">
+
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-right"></span></div>
-                  <div class="text">
+                  <div class="text px-4">
                     <div class="d-flex align-items-center mb-4">
                       <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
                       <div class="pl-3">
-                        <p class="name">Office Manager</p>
+                        <p class="name mb-0">Office Manager</p>
                         <span class="position">Sydney (2024)</span>
                       </div>
                     </div>
@@ -502,11 +758,11 @@
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-right"></span></div>
-                  <div class="text">
+                  <div class="text px-4">
                     <div class="d-flex align-items-center mb-4">
                       <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
                       <div class="pl-3">
-                        <p class="name">Facility Coordinator</p>
+                        <p class="name mb-0">Facility Coordinator</p>
                         <span class="position">Western Sydney (2024)</span>
                       </div>
                     </div>
@@ -518,12 +774,12 @@
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-right"></span></div>
-                  <div class="text">
+                  <div class="text px-4">
                     <div class="d-flex align-items-center mb-4">
                       <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
                       <div class="pl-3">
-                        <p class="name">Operations Contact</p>
-                        <span class="position">Auburn (2024)</span>
+                        <p class="name mb-0">Operations Contact</p>
+                        <span class="position">Sydney (2024)</span>
                       </div>
                     </div>
                     <p class="mb-1">We needed urgent support outside normal hours and Brighta responded quickly and professionally.</p>
@@ -534,12 +790,12 @@
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-right"></span></div>
-                  <div class="text">
+                  <div class="text px-4">
                     <div class="d-flex align-items-center mb-4">
                       <div class="user-img" style="background-image: url(images/person_4.jpg)"></div>
                       <div class="pl-3">
-                        <p class="name">Property Representative</p>
-                        <span class="position">Inner West (2024)</span>
+                        <p class="name mb-0">Property Representative</p>
+                        <span class="position">Sydney (2024)</span>
                       </div>
                     </div>
                     <p class="mb-1">Strong presentation, uniformed staff, and consistent outcomes week to week.</p>
@@ -550,11 +806,11 @@
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-right"></span></div>
-                  <div class="text">
+                  <div class="text px-4">
                     <div class="d-flex align-items-center mb-4">
                       <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
                       <div class="pl-3">
-                        <p class="name">Strata Contact</p>
+                        <p class="name mb-0">Strata Contact</p>
                         <span class="position">Sydney (2024)</span>
                       </div>
                     </div>
@@ -566,11 +822,11 @@
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-right"></span></div>
-                  <div class="text">
+                  <div class="text px-4">
                     <div class="d-flex align-items-center mb-4">
                       <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
                       <div class="pl-3">
-                        <p class="name">Childcare Operations</p>
+                        <p class="name mb-0">Childcare Operations</p>
                         <span class="position">Sydney (2024)</span>
                       </div>
                     </div>
@@ -582,11 +838,11 @@
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-right"></span></div>
-                  <div class="text">
+                  <div class="text px-4">
                     <div class="d-flex align-items-center mb-4">
                       <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
                       <div class="pl-3">
-                        <p class="name">Business Owner</p>
+                        <p class="name mb-0">Business Owner</p>
                         <span class="position">Sydney (2024)</span>
                       </div>
                     </div>
@@ -594,21 +850,29 @@
                   </div>
                 </div>
               </div>
-            </section>
+
+            </div><!-- /carousel -->
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Recent Work -->
     <section class="ftco-section ftco-no-pb" id="recent-work">
       <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <span class="subheading">Recent Work</span>
-            <h2>Project Highlights</h2>
-            <p class="mb-0">A snapshot of cleaning outcomes delivered across Sydney.</p>
+          <div class="col-md-12 heading-section text-center">
+            <div class="reveal" data-animate="fadeInUp">
+              <span class="subheading">Recent Work</span>
+              <h2>Project Highlights</h2>
+              <p class="mb-0">A snapshot of cleaning outcomes delivered across Sydney.</p>
+            </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-1.jpg);">
+          <div class="col-md-6 col-lg-3">
+            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-1.jpg);">
               <a href="images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
                 <span class="fa fa-expand"></span>
               </a>
@@ -620,8 +884,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-2.jpg);">
+          <div class="col-md-6 col-lg-3">
+            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-2.jpg);">
               <a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
                 <span class="fa fa-expand"></span>
               </a>
@@ -633,8 +897,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-3.jpg);">
+          <div class="col-md-6 col-lg-3">
+            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-3.jpg);">
               <a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
                 <span class="fa fa-expand"></span>
               </a>
@@ -646,8 +910,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="work img d-flex align-items-center" style="background-image: url(images/work-4.jpg);">
+          <div class="col-md-6 col-lg-3">
+            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-4.jpg);">
               <a href="images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
                 <span class="fa fa-expand"></span>
               </a>
@@ -661,41 +925,45 @@
         </div>
 
         <div class="row justify-content-center mt-4">
-          <div class="col-md-8 text-center ftco-animate">
-            <a href="portfolio.html" class="btn btn-primary px-4 py-3">View All Recent Work</a>
+          <div class="col-md-8 text-center">
+            <div class="reveal" data-animate="fadeInUp">
+              <a href="portfolio.html" class="btn btn-primary px-4 py-3">View All Recent Work</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SEO / Trust description -->
+    <!-- SEO / Trust -->
     <section class="ftco-section bg-light" id="trust">
       <div class="container">
         <div class="row justify-content-center pb-4">
-          <div class="col-md-9 heading-section text-center ftco-animate">
-            <span class="subheading">Trust & Quality</span>
-            <h2>Why Clients Choose Brighta</h2>
-            <p class="mb-0">
-              We focus on reliability and operational discipline—so you get predictable outcomes across different service types and locations.
-            </p>
+          <div class="col-md-9 heading-section text-center">
+            <div class="reveal" data-animate="fadeInUp">
+              <span class="subheading">Trust &amp; Quality</span>
+              <h2>Why Clients Choose Brighta</h2>
+              <p class="mb-0">
+                We focus on reliability and operational discipline—so you get predictable outcomes across different service types and locations.
+              </p>
+            </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-4 ftco-animate">
-            <div class="card-soft p-4 h-100">
+          <div class="col-md-4">
+            <div class="card-soft p-4 h-100 reveal" data-animate="fadeInUp">
               <h3 class="mb-2">Quality Checklists</h3>
               <p class="mb-0">Defined scopes and practical checklists to improve consistency and reduce missed items.</p>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="card-soft p-4 h-100">
+          <div class="col-md-4">
+            <div class="card-soft p-4 h-100 reveal" data-animate="fadeInUp">
               <h3 class="mb-2">Fast Response</h3>
               <p class="mb-0">Responsive coordination and clear communication from enquiry through to completion.</p>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
-            <div class="card-soft p-4 h-100">
+          <div class="col-md-4">
+            <div class="card-soft p-4 h-100 reveal" data-animate="fadeInUp">
               <h3 class="mb-2">Sydney-Wide Coverage</h3>
               <p class="mb-0">We service all Sydney areas for residential, end-of-lease and commercial cleaning.</p>
             </div>
@@ -709,30 +977,34 @@
       <div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-9 text-center ftco-animate">
-            <h2>Need Cleaning Support Across Sydney?</h2>
-            <p class="mb-4">Request a quote or call now for fast response and flexible scheduling.</p>
-            <a href="contact.html" class="btn btn-primary px-4 py-3 mr-2">Request a Quote</a>
-            <a href="tel:+61424211382" class="btn btn-outline-light px-4 py-3">Call Now</a>
+          <div class="col-md-9 text-center">
+            <div class="reveal" data-animate="fadeInUp">
+              <h2>Need Cleaning Support Across Sydney?</h2>
+              <p class="mb-4">Request a quote or call now for fast response and flexible scheduling.</p>
+              <a href="contact.html" class="btn btn-primary px-4 py-3 mr-2">Request a Quote</a>
+              <a href="tel:+61424211382" class="btn btn-outline-light px-4 py-3">Call Now</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Sydney Map (end section) -->
+    <!-- Sydney Map -->
     <section class="ftco-section bg-light" id="map">
       <div class="container">
         <div class="row justify-content-center pb-4">
-          <div class="col-md-8 heading-section text-center ftco-animate">
-            <span class="subheading">Service Area</span>
-            <h2>Sydney Coverage Map</h2>
-            <p class="mb-0">Servicing all Sydney areas for residential, end-of-lease, and commercial cleaning.</p>
+          <div class="col-md-8 heading-section text-center">
+            <div class="reveal" data-animate="fadeInUp">
+              <span class="subheading">Service Area</span>
+              <h2>Sydney Coverage Map</h2>
+              <p class="mb-0">Servicing all Sydney areas for residential, end-of-lease, and commercial cleaning.</p>
+            </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-md-12 ftco-animate">
-            <div class="map-wrap">
+          <div class="col-md-12">
+            <div class="map-wrap reveal" data-animate="fadeInUp">
               <iframe
                 title="Sydney map"
                 loading="lazy"
@@ -742,13 +1014,15 @@
             </div>
           </div>
         </div>
-      </div>
+
         <div class="row justify-content-center mt-4">
-          <div class="col-md-10 text-center ftco-animate">
-            <p class="mb-0">
-              Call <a href="tel:+61424211382">0424 211 382</a> or email
-              <a href="mailto:info.brightaservices@gmail.com">info.brightaservices@gmail.com</a>.
-            </p>
+          <div class="col-md-10 text-center">
+            <div class="reveal" data-animate="fadeInUp">
+              <p class="mb-0">
+                Call <a href="tel:+61424211382">0424 211 382</a> or email
+                <a href="mailto:info.brightaservices@gmail.com">info.brightaservices@gmail.com</a>.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -758,7 +1032,6 @@
     <footer class="footer ftco-section">
       <div class="container">
         <div class="row">
-
           <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
             <h2 class="footer-heading">Brighta Property Services</h2>
             <p class="mini">
@@ -799,7 +1072,6 @@
               <a href="tel:+61424211382" class="btn btn-secondary px-4 py-3">Call Now</a>
             </div>
           </div>
-
         </div>
 
         <div class="row mt-5">
@@ -815,7 +1087,7 @@
 
     <!-- Loader -->
     <div id="ftco-loader" class="show fullscreen" aria-hidden="true">
-      <svg class="circular" width="48px" height="48px">
+      <svg class="circular" width="48px" height="48px" role="img" aria-label="Loading">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
       </svg>
@@ -834,5 +1106,53 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/scrollax.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Extra animation + UX reliability (safe additive layer) -->
+    <script>
+      (function () {
+        // IntersectionObserver reveal (uses animate.css classes)
+        var items = document.querySelectorAll(".reveal");
+        if (!items.length) return;
+
+        var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (prefersReduced) {
+          items.forEach(function (el) {
+            el.classList.add("is-visible");
+          });
+          return;
+        }
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+
+              var el = entry.target;
+              var anim = el.getAttribute("data-animate") || "fadeInUp";
+
+              el.classList.add("is-visible", "animated", anim);
+              observer.unobserve(el);
+            });
+          },
+          { threshold: 0.16 }
+        );
+
+        items.forEach(function (el) {
+          observer.observe(el);
+        });
+
+        // Navbar scrolled class (visual polish)
+        var nav = document.getElementById("ftco-navbar");
+        if (nav) {
+          var onScroll = function () {
+            if (window.scrollY > 60) nav.classList.add("scrolled");
+            else nav.classList.remove("scrolled");
+          };
+          onScroll();
+          window.addEventListener("scroll", onScroll, { passive: true });
+        }
+      })();
+    </script>
   </body>
 </html>
