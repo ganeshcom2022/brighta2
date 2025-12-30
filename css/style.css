@@ -1,8 +1,4 @@
-/*!
- * Bootstrap v4.2.1 (https://getbootstrap.com/)
- * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
  */
 :root {
   --blue: #0A64A1;
@@ -9793,3 +9789,66 @@ textarea.form-control {
     height: 50px;
   }
 }
+
+/* ===== Testimonials: force readable text (fix blank cards) ===== */
+.testimony-section .testimony-wrap{
+  background:#fff !important;
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
+  box-shadow: 0 14px 30px rgba(0,0,0,.08);
+  border: 1px solid rgba(0,0,0,.04);
+}
+
+/* your theme likely sets p/span to white in testimony */
+.testimony-section .testimony-wrap .text,
+.testimony-section .testimony-wrap .text p,
+.testimony-section .testimony-wrap .text .name,
+.testimony-section .testimony-wrap .text .position,
+.testimony-section .testimony-wrap .text span{
+  color:#122033 !important;
+}
+
+/* make the “quote” icon look premium like your screenshot */
+.testimony-section .testimony-wrap .icon{
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: rgba(245,232,74,.25) !important;
+}
+.testimony-section .testimony-wrap .icon span{
+  color:#d9c800 !important;
+}
+
+/* bottom yellow accent line */
+.testimony-section .testimony-wrap::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:4px;
+  background:#f5e84a;
+}
+
+/* spacing so text doesn’t sit under the quote icon */
+.testimony-section .testimony-wrap .text{
+  padding: 62px 22px 22px !important;
+}
+
+/* avatar style */
+.testimony-section .testimony-wrap .user-img{
+  width:54px !important;
+  height:54px !important;
+  border-radius:999px !important;
+  background-size:cover !important;
+  background-position:center !important;
+  border: 2px solid rgba(11,31,58,.10);
+}
+
