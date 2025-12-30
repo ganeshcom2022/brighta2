@@ -5,40 +5,153 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+    <!-- Icons + Vendor CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
-
     <link rel="stylesheet" href="css/flaticon.css" />
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Page polish (safe overrides) -->
+    <style>
+      /* Keep changes contained; does not break other pages */
+      .topbar-abn { opacity: .95; font-weight: 500; }
+      .brand-text { font-weight: 700; }
+      .brand-sub { font-weight: 500; opacity: .9; }
+
+      /* About key panel (replaces Business Hours) */
+      .ops-panel {
+        background: #0b2a4a;
+        color: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 12px 28px rgba(0,0,0,.12);
+      }
+      .ops-panel .ops-head {
+        padding: 22px 22px 14px;
+        border-bottom: 1px solid rgba(255,255,255,.12);
+      }
+      .ops-panel .ops-head h2 {
+        margin: 0;
+        font-size: 20px;
+        letter-spacing: .3px;
+        color: #fff;
+      }
+      .ops-panel .ops-head p {
+        margin: 8px 0 0;
+        font-size: 14px;
+        opacity: .9;
+      }
+      .ops-panel .ops-body {
+        padding: 18px 22px 22px;
+      }
+      .ops-bullets {
+        margin: 0;
+        padding-left: 18px;
+        font-size: 14px;
+        line-height: 1.6;
+        opacity: .95;
+      }
+      .ops-bullets li { margin-bottom: 6px; }
+
+      /* Emergency CTA block */
+      .emergency-cta {
+        background: #f1e84f; /* template yellow tone */
+        color: #111;
+        padding: 18px 22px;
+      }
+      .emergency-cta .label {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: .8px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .emergency-cta a.phone {
+        display: inline-block;
+        font-size: 28px;
+        font-weight: 800;
+        color: #111;
+        text-decoration: none;
+        line-height: 1.1;
+      }
+      .emergency-cta .note {
+        margin: 8px 0 0;
+        font-size: 13px;
+        opacity: .8;
+      }
+      .emergency-cta .abn {
+        margin-top: 10px;
+        font-size: 12px;
+        opacity: .85;
+      }
+
+      /* About copy polish */
+      .about-highlights {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .about-chip {
+        background: #fff;
+        border: 1px solid rgba(0,0,0,.06);
+        border-radius: 10px;
+        padding: 12px 14px;
+        box-shadow: 0 10px 22px rgba(0,0,0,.05);
+      }
+      .about-chip strong { display: block; font-size: 14px; margin-bottom: 3px; }
+      .about-chip span { font-size: 13px; opacity: .9; }
+
+      /* Counters compact on mobile */
+      @media (max-width: 767.98px) {
+        .ops-panel { max-width: 94%; margin: 0 auto; }
+        .emergency-cta a.phone { font-size: 24px; }
+        .about-highlights { gap: 10px; }
+      }
+
+      /* Team cards: reduce unused social clutter */
+      .staff .text .ftco-social { display: none; }
+      .team-role {
+        display: inline-block;
+        margin-top: 6px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(0,0,0,.06);
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      /* Testimonials: cleaner look */
+      .testimony-wrap { border-radius: 12px; box-shadow: 0 12px 28px rgba(0,0,0,.06); }
+      .testimony-wrap .name { font-weight: 700; }
+    </style>
   </head>
 
   <body>
-    <!-- Top Bar -->
+    <!-- Top bar -->
     <div class="wrap">
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-12 col-md d-flex align-items-center">
             <p class="mb-0 phone">
-              <span class="mailus">Phone:</span>
-              <a href="tel:+61424211382">0424 211 382</a>
-              |
-              <span class="mailus">Email:</span>
-              <a href="mailto:info.brightaservices@gmail.com">info.brightaservices@gmail.com</a>
-              |
-              <span class="mailus">ABN:</span>
-              67 154 216 436
+              <span class="mailus">Phone:</span> <a href="tel:+61424211382">0424 211 382</a>
+              | <span class="mailus">Email:</span> <a href="mailto:info.brightaservices@gmail.com">info.brightaservices@gmail.com</a>
+              | <span class="mailus">ABN:</span> <span class="topbar-abn">67 154 216 436</span>
             </p>
           </div>
 
           <div class="col-12 col-md d-flex justify-content-md-end">
             <div class="social-media">
               <p class="mb-0 d-flex">
-                <!-- Replace # with your real links when ready -->
+                <!-- Replace # with real links when available -->
                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
                 <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-google"><i class="sr-only">Google</i></span></a>
@@ -67,6 +180,7 @@
             <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
             <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
             <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+            <!-- If you do NOT want pricing shown, delete the next line -->
             <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
             <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
             <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -91,28 +205,40 @@
         </div>
       </div>
     </section>
-    
-    
-                    <h4>After-Hours:</h4>
-                    <p class="pl-3">
-                      <span>After-hours support available by request.</span>
-                      <span>Emergency response available for urgent cases.</span>
-                    </p>
-                  </div>
+
+    <!-- About / Operations -->
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+      <div class="container">
+        <div class="row d-flex no-gutters">
+          <!-- Left visual + operations panel -->
+          <div class="col-md-6 d-flex">
+            <div class="img d-flex align-items-center justify-content-center py-5 py-md-0" style="background-image:url(images/about.jpg);">
+              <div class="ops-panel ftco-animate">
+                <div class="ops-head">
+                  <h2>24/7 Operations &amp; Emergency Support</h2>
+                  <p>We work around your schedule — including evenings, weekends, and urgent requests.</p>
                 </div>
 
-                <div class="desc p-4 bg-secondary">
-                  <h3 class="heading">Emergency &amp; After-Hours Support</h3>
-                  <span class="phone"><a href="tel:+61424211382" style="color:#fff;">0424 211 382</a></span>
-                  <div style="margin-top:8px; font-size:14px; color: rgba(255,255,255,0.9);">
-                    Operations line — fast response for urgent requests.
-                  </div>
+                <div class="ops-body">
+                  <ul class="ops-bullets">
+                    <li>Offices, commercial sites, and managed properties</li>
+                    <li>Childcare centres and hygiene-sensitive environments</li>
+                    <li>Strata buildings and common area maintenance</li>
+                    <li>Short-notice and after-hours call-outs</li>
+                  </ul>
+                </div>
+
+                <div class="emergency-cta">
+                  <div class="label">Emergency line</div>
+                  <a class="phone" href="tel:+61424211382">0424 211 382</a>
+                  <div class="note">Operations line — fast response for urgent requests.</div>
+                  <div class="abn"><strong>ABN:</strong> 67 154 216 436</div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Right Content -->
+          <!-- Right content -->
           <div class="col-md-6 pl-md-5 pt-md-5">
             <div class="row justify-content-start py-5">
               <div class="col-md-12 heading-section ftco-animate">
@@ -120,14 +246,24 @@
                 <h2 class="mb-4">Reliable Cleaning &amp; Property Services Across Sydney</h2>
 
                 <p>
-                  Brighta Property Services is a Sydney-based cleaning and property services provider delivering dependable outcomes for offices, childcare centres, strata buildings, and managed properties.
-                  We operate with clear standards, consistent supervision, and quality assurance to ensure every site is maintained to a professional level.
-                  For urgent requirements, our operations team is available to respond quickly outside standard hours.
+                  Brighta Property Services is a Sydney-based provider delivering dependable outcomes for offices, childcare centres, strata buildings, and managed properties.
+                  We operate with clear standards, consistent supervision, and quality assurance — so every site is maintained to a professional level.
                 </p>
 
-                <p style="margin-bottom:0;">
-                  <strong>ABN:</strong> 67 154 216 436
-                </p>
+                <div class="about-highlights">
+                  <div class="about-chip">
+                    <strong>Quality Assurance</strong>
+                    <span>Routine checks and supervision to maintain consistent service delivery.</span>
+                  </div>
+                  <div class="about-chip">
+                    <strong>Fast Communication</strong>
+                    <span>Direct operations contact for scheduling, updates, and urgent requests.</span>
+                  </div>
+                  <div class="about-chip">
+                    <strong>Flexible Service</strong>
+                    <span>Tailored service plans for commercial, strata, and childcare environments.</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -181,13 +317,13 @@
               <span class="subheading">Team &amp; Leadership</span>
               <h2>Our Team</h2>
               <p>
-                Our leadership and operations team is hands-on, accountable, and focused on consistent results. We support clients with clear communication, quality control, and flexible scheduling tailored to each site.
+                A hands-on leadership team focused on consistency, accountability, and high service standards across every site.
               </p>
               <p><a href="contact.html" class="btn btn-secondary">Talk to Our Team</a></p>
             </div>
           </div>
 
-          <!-- NOTE: Your GitHub shows staff-1.png, staff-2.png, staff-3.png -->
+          <!-- Staff cards (using your current filenames) -->
           <div class="col-md-4 col-lg-3 ftco-animate d-flex">
             <div class="staff">
               <div class="img-wrap d-flex align-items-stretch">
@@ -195,7 +331,7 @@
               </div>
               <div class="text pt-3 px-3 pb-4 text-center">
                 <h3>Binaya GC</h3>
-                <span class="position mb-2">Commercial Operations Manager</span>
+                <span class="team-role">Commercial Operations Manager</span>
               </div>
             </div>
           </div>
@@ -207,7 +343,7 @@
               </div>
               <div class="text pt-3 px-3 pb-4 text-center">
                 <h3>Sangit Sharma</h3>
-                <span class="position mb-2">Quality Assurance Supervisor</span>
+                <span class="team-role">Quality Assurance Supervisor</span>
               </div>
             </div>
           </div>
@@ -219,7 +355,7 @@
               </div>
               <div class="text pt-3 px-3 pb-4 text-center">
                 <h3>Ganesh Khatri</h3>
-                <span class="position mb-2">On-Site Services Manager</span>
+                <span class="team-role">On-Site Services Manager</span>
               </div>
             </div>
           </div>
@@ -228,21 +364,20 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Testimonials (7 slides) -->
     <section class="ftco-section testimony-section bg-light">
       <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <span class="subheading">Testimonials</span>
             <h2>Happy Customers</h2>
-            <p style="margin-bottom:0;">Real feedback focused on reliability, quality, and communication.</p>
+            <p class="mb-0">Feedback focused on reliability, quality, and communication.</p>
           </div>
         </div>
 
         <div class="row ftco-animate">
           <div class="col-md-12">
             <div class="carousel-testimony owl-carousel ftco-owl">
-
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-right"></span></div>
@@ -270,7 +405,7 @@
                         <span class="position">Western Sydney (2024)</span>
                       </div>
                     </div>
-                    <p class="mb-1">Professional and detail-focused. Quality checks are clearly part of their process.</p>
+                    <p class="mb-1">Professional, detail-focused, and consistent. Quality checks are clearly part of their process.</p>
                   </div>
                 </div>
               </div>
@@ -350,7 +485,7 @@
                         <span class="position">Sydney (2024)</span>
                       </div>
                     </div>
-                    <p class="mb-1">Consistent results, professional approach, and fast response when we need support.</p>
+                    <p class="mb-1">Consistent results and fast response. A professional team we can depend on.</p>
                   </div>
                 </div>
               </div>
@@ -366,7 +501,7 @@
       <div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-md-9 text-center">
+          <div class="col-md-9 text-center ftco-animate">
             <h2>Need Reliable Cleaning or Property Services?</h2>
             <p style="color: rgba(255,255,255,0.9); margin-bottom: 18px;">
               Request a quote or speak to our operations team for urgent support.
@@ -380,58 +515,44 @@
       </div>
     </section>
 
-    <!-- Footer (Clean + Consistent) -->
+    <!-- Footer (clean + consistent) -->
     <footer class="footer ftco-section">
       <div class="container">
         <div class="row">
-          <!-- Company -->
           <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
             <h2 class="footer-heading">Brighta Property Services</h2>
             <p>
               Sydney-based cleaning and property services focused on reliability, quality assurance, and responsive operations.
-              We support offices, childcare centres, strata buildings, and managed properties.
+              Supporting offices, childcare centres, strata buildings, and managed properties.
             </p>
             <p style="margin-bottom: 8px;"><strong>ABN:</strong> 67 154 216 436</p>
 
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-              <!-- Replace # with real links -->
               <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
               <li class="ftco-animate"><a href="#"><span class="fa fa-google"></span></a></li>
             </ul>
           </div>
 
-          <!-- Services -->
           <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
-            <h2 class="footer-heading">Services</h2>
+            <h2 class="footer-heading">Quick Links</h2>
             <ul class="list-unstyled">
-              <li><a href="services.html" class="py-1 d-block">Commercial Cleaning</a></li>
-              <li><a href="services.html" class="py-1 d-block">Office &amp; Workplace Cleaning</a></li>
-              <li><a href="services.html" class="py-1 d-block">Childcare Cleaning</a></li>
-              <li><a href="services.html" class="py-1 d-block">Strata &amp; Common Areas</a></li>
-              <li><a href="services.html" class="py-1 d-block">End of Lease / Deep Cleaning</a></li>
-              <li><a href="contact.html" class="py-1 d-block">Emergency &amp; After-Hours Support</a></li>
+              <li><a href="index.html" class="py-1 d-block">Home</a></li>
+              <li><a href="about.html" class="py-1 d-block">About</a></li>
+              <li><a href="services.html" class="py-1 d-block">Services</a></li>
+              <li><a href="portfolio.html" class="py-1 d-block">Portfolio</a></li>
+              <li><a href="contact.html" class="py-1 d-block">Contact</a></li>
             </ul>
           </div>
 
-          <!-- Contact -->
           <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
             <h2 class="footer-heading">Contact</h2>
             <div class="block-23 mb-3">
               <ul>
-                <li>
-                  <span class="icon fa fa-map-marker"></span>
-                  <span class="text">Service Area: Sydney Metropolitan &amp; Surrounding Suburbs</span>
-                </li>
-                <li>
-                  <a href="tel:+61424211382"><span class="icon fa fa-phone"></span><span class="text">0424 211 382</span></a>
-                </li>
-                <li>
-                  <a href="mailto:info.brightaservices@gmail.com"><span class="icon fa fa-paper-plane"></span><span class="text">info.brightaservices@gmail.com</span></a>
-                </li>
-                <li>
-                  <a href="contact.html"><span class="icon fa fa-envelope"></span><span class="text">Request a Quote</span></a>
-                </li>
+                <li><span class="icon fa fa-map-marker"></span><span class="text">Service Area: Sydney Metropolitan &amp; Surrounding Suburbs</span></li>
+                <li><a href="tel:+61424211382"><span class="icon fa fa-phone"></span><span class="text">0424 211 382</span></a></li>
+                <li><a href="mailto:info.brightaservices@gmail.com"><span class="icon fa fa-paper-plane"></span><span class="text">info.brightaservices@gmail.com</span></a></li>
+                <li><a href="contact.html"><span class="icon fa fa-envelope"></span><span class="text">Request a Quote</span></a></li>
               </ul>
             </div>
           </div>
@@ -448,11 +569,11 @@
       </div>
     </footer>
 
-    <!-- loader -->
+    <!-- Loader -->
     <div id="ftco-loader" class="show fullscreen">
       <svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"></circle>
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"></circle>
       </svg>
     </div>
 
@@ -469,7 +590,7 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/scrollax.min.js"></script>
 
-    <!-- If you are not using Google Maps on About page, you can remove the next 2 lines -->
+    <!-- If you are NOT using maps on About page, you can remove the next 2 lines safely -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
 
