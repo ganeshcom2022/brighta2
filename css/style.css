@@ -9851,4 +9851,30 @@ textarea.form-control {
   background-position:center !important;
   border: 2px solid rgba(11,31,58,.10);
 }
+/* ===== Divider between sections (Map -> Footer) ===== */
+.section-divider{
+  background: #f8f9fb;            /* same light background as map section */
+  padding: 18px 0 0;               /* space above line */
+}
+
+.section-divider .divider-line{
+  height: 1px;
+  width: 100%;
+  background: rgba(11,31,58,.14);  /* subtle line */
+  border-radius: 999px;
+  position: relative;
+}
+
+/* optional: small yellow accent in center */
+.section-divider .divider-line::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:-2px;
+  width: 120px;
+  height: 4px;
+  border-radius: 999px;
+  background: #f5e84a;
+}
 
