@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Brighta Property Services | Cleaning & Property Care</title>
+    <title>Brighta Property Services | Cleaning & Property Care Sydney</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- SEO -->
     <meta
       name="description"
-      content="Brighta Property Services provides reliable residential, end-of-lease and commercial cleaning across Sydney. Fast quotes, consistent quality checklists, and professional service."
+      content="Brighta Property Services delivers residential, end-of-lease and commercial cleaning across Sydney. Fast response, flexible scheduling, 24/7 emergency support, and quality checklist controls."
     />
-    <link rel="canonical" href="index.html" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#0b1f3a" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Brighta Property Services | Cleaning & Property Care" />
+    <meta property="og:title" content="Brighta Property Services | Cleaning & Property Care Sydney" />
     <meta
       property="og:description"
-      content="Residential, end-of-lease and commercial cleaning across Sydney. Request a quote today."
+      content="Cleaning and property care across Sydney. Request a quote, call now, or view services."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="images/bg_1.jpg" />
 
-    <!-- LocalBusiness structured data (no Auburn mentioned) -->
+    <!-- Local Business Schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -30,26 +31,25 @@
         "image": "images/brighta-logo.png",
         "telephone": "+61424211382",
         "email": "info.brightaservices@gmail.com",
-        "areaServed": ["Sydney", "Greater Sydney", "NSW"],
         "address": {
           "@type": "PostalAddress",
           "addressRegion": "NSW",
           "addressCountry": "AU"
         },
+        "areaServed": ["Sydney", "Greater Sydney", "NSW"],
         "identifier": [
           {
             "@type": "PropertyValue",
             "propertyID": "ABN",
             "value": "67 154 216 436"
           }
-        ],
-        "url": "index.html"
+        ]
       }
     </script>
 
+    <!-- Fonts & CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
@@ -57,57 +57,90 @@
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- Extra polish (safe, no framework change) -->
     <style>
-      .navbar-brand img { height: 42px; width: auto; margin-right: 10px; }
-      .brand-text { font-weight: 700; margin-left: 2px; }
-      .brand-sub { font-size: 12px; display: inline-block; opacity: .9; }
+      /* Brand balance */
+      .navbar-brand img { height: 44px; width: auto; margin-right: 10px; }
+      .navbar-brand .brand-text { font-weight: 700; letter-spacing: .2px; }
+      .navbar-brand .brand-sub { display: inline-block; font-size: 12px; opacity: .92; margin-left: 6px; }
 
+      /* Hero CTA */
+      .hero-cta-row .btn { margin-right: 10px; margin-bottom: 10px; }
+      .btn-outline-light { color: #fff; border: 1px solid rgba(255,255,255,.7); background: transparent; }
+      .btn-outline-light:hover { background: rgba(255,255,255,.12); }
+
+      /* Trust bar */
       .trust-bar {
-        margin-top: 18px;
+        margin-top: 16px;
         padding: 10px 12px;
         border-radius: 10px;
         background: rgba(255,255,255,.10);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
         border: 1px solid rgba(255,255,255,.18);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
       }
-      .trust-bar .trust-item {
-        display: inline-flex;
-        align-items: center;
-        margin-right: 14px;
-        margin-bottom: 8px;
-        color: rgba(255,255,255,.95);
-        font-size: 14px;
-        line-height: 1.2;
-      }
-      .trust-bar .trust-item .fa { margin-right: 8px; opacity: .95; }
-      .hero-cta-row .btn { margin-right: 10px; margin-bottom: 10px; }
-      .btn-outline-light {
-        color: #fff;
-        border: 1px solid rgba(255,255,255,.65);
-        background: transparent;
-      }
-      .btn-outline-light:hover { background: rgba(255,255,255,.12); }
+      .trust-item { display: inline-flex; align-items: center; color: rgba(255,255,255,.95); font-size: 14px; }
+      .trust-item .fa { margin-right: 8px; }
 
-      .wrap-appointment { border-radius: 12px; box-shadow: 0 12px 38px rgba(0,0,0,.10); }
-
-      .services .media-body p { margin-bottom: 10px; }
-      .btn-custom { font-weight: 600; }
-
-      .reviews-cta {
+      /* Premium cards */
+      .card-soft {
         background: #fff;
         border-radius: 14px;
-        padding: 28px;
-        box-shadow: 0 12px 38px rgba(0,0,0,.08);
+        box-shadow: 0 12px 30px rgba(0,0,0,.08);
+        overflow: hidden;
       }
-      .reviews-cta .rating { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-      .reviews-cta .meta { color: #666; margin-bottom: 18px; }
-      .reviews-cta .stars { letter-spacing: 1px; }
+
+      /* Availability badge */
+      .availability-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: rgba(11,31,58,.06);
+        border: 1px solid rgba(11,31,58,.10);
+        font-weight: 600;
+      }
+
+      /* Team cards (your screenshot style) */
+      .team-card {
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        transition: transform .3s ease, box-shadow .3s ease;
+      }
+      .team-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.12); }
+      .team-img { height: 320px; background-size: cover; background-position: center; }
+      .team-info { background: #f5e84a; text-align: center; padding: 18px 15px; }
+      .team-info h3 { margin: 0; font-size: 20px; font-weight: 700; color: #222; }
+      .team-info span {
+        display: inline-block;
+        margin-top: 6px;
+        font-size: 14px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        background: rgba(0,0,0,0.12);
+        color: #222;
+      }
+
+      /* Map */
+      .map-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+      .map-wrap iframe { width: 100%; height: 380px; border: 0; display: block; }
+
+      /* Footer */
+      .footer .footer-heading { font-weight: 700; }
+      .footer .mini { opacity: .86; font-size: 14px; }
+      .footer .legal { opacity: .8; font-size: 13px; }
+
+      /* Focus */
+      a:focus { outline: 3px solid rgba(245,232,74,.7); outline-offset: 3px; }
     </style>
   </head>
 
   <body>
-    <!-- Top bar -->
+    <!-- Top Bar -->
     <div class="wrap">
       <div class="container">
         <div class="row justify-content-between">
@@ -123,8 +156,12 @@
           <div class="col-12 col-md d-flex justify-content-md-end">
             <div class="social-media">
               <p class="mb-0 d-flex">
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                <a href="#" class="d-flex align-items-center justify-content-center" aria-label="Facebook">
+                  <span class="fa fa-facebook"><i class="sr-only">Facebook</i></span>
+                </a>
+                <a href="#" class="d-flex align-items-center justify-content-center" aria-label="Instagram">
+                  <span class="fa fa-instagram"><i class="sr-only">Instagram</i></span>
+                </a>
               </p>
             </div>
           </div>
@@ -132,16 +169,19 @@
       </div>
     </div>
 
-    <!-- Nav (Pricing removed) -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img src="images/brighta-logo.png" alt="Brighta Property Services logo" />
-          <span class="brand-text">Brighta</span> <span class="brand-sub">Property Services</span>
+          <span class="brand-text">Brighta</span>
+          <span class="brand-sub">Property Services</span>
         </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="fa fa-bars"></span> Menu
         </button>
+
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
@@ -163,20 +203,21 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate">
             <h2 class="subheading">Trusted cleaning & property care across Sydney</h2>
-            <h1 class="mb-3">Residential, End-of-Lease & Commercial Cleaning — Delivered with Consistent Quality Controls</h1>
-            <p class="mb-3">Clear scopes, checklists, and dependable results for tenants, homeowners, and small-to-mid businesses.</p>
+            <h1 class="mb-3">Residential, End-of-Lease & Commercial Cleaning — Delivered to a Consistent Standard</h1>
+            <p class="mb-3">
+              Defined scopes, quality checklists, and responsive service delivery — built for tenants, homeowners, and commercial sites.
+            </p>
 
             <div class="hero-cta-row">
-              <a href="#quote" class="btn btn-primary py-2 px-4">Request a Quote</a>
-              <a href="tel:+61424211382" class="btn btn-outline-light py-2 px-4">Call Now</a>
-              <a href="services.html" class="btn btn-secondary py-2 px-4">View Services</a>
+              <a href="contact.html" class="btn btn-primary py-2 px-4">REQUEST A QUOTE</a>
+              <a href="tel:+61424211382" class="btn btn-outline-light py-2 px-4">CALL NOW</a>
+              <a href="services.html" class="btn btn-secondary py-2 px-4">VIEW SERVICES</a>
             </div>
 
-            <!-- Trust bar -->
-            <div class="trust-bar ftco-animate">
+            <div class="trust-bar ftco-animate" aria-label="Trust signals">
               <span class="trust-item"><i class="fa fa-check-circle"></i> ABN Registered</span>
               <span class="trust-item"><i class="fa fa-list-alt"></i> Quality Checklists</span>
-              <span class="trust-item"><i class="fa fa-clock-o"></i> Fast Quotes</span>
+              <span class="trust-item"><i class="fa fa-bolt"></i> Fast Response</span>
               <span class="trust-item"><i class="fa fa-map-marker"></i> All Sydney Areas</span>
             </div>
           </div>
@@ -184,158 +225,91 @@
       </div>
     </div>
 
-    <!-- Quote form -->
-    <section id="quote" class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb">
-      <div class="overlay"></div>
+    <!-- Availability + About -->
+    <section class="ftco-section ftco-no-pt">
       <div class="container">
-        <div class="row d-md-flex justify-content-center">
-          <div class="col-md-12">
-            <div class="wrap-appointment bg-white d-md-flex pl-md-4 pb-5 pb-md-0">
-              <!-- NOTE: Replace action with your chosen form service endpoint -->
-              <form action="#" method="POST" class="appointment w-100">
-                <div class="row justify-content-center">
-                  <div class="col-12 col-md d-flex align-items-center pt-4 pt-md-0">
-                    <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                      <label for="fullName">Full name</label>
-                      <input id="fullName" name="fullName" type="text" class="form-control" placeholder="Full name" required />
-                    </div>
-                  </div>
-                  <div class="col-12 col-md d-flex align-items-center">
-                    <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                      <label for="phone">Phone number</label>
-                      <input id="phone" name="phone" type="tel" class="form-control" placeholder="Phone number" required />
-                    </div>
-                  </div>
-                  <div class="col-12 col-md d-flex align-items-center">
-                    <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                      <label for="service">Select service</label>
-                      <div class="form-field">
-                        <div class="select-wrap">
-                          <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                          <select name="service" id="service" class="form-control" required>
-                            <option value="">Select a service</option>
-                            <option value="regular">Regular house cleaning</option>
-                            <option value="deep">Deep clean</option>
-                            <option value="endoflease">End of lease cleaning</option>
-                            <option value="commercial">Office / commercial cleaning</option>
-                            <option value="strata">Strata / common area cleaning</option>
-                            <option value="other">Other (tell us in message)</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md d-flex align-items-center pb-4 pb-md-0">
-                    <div class="form-group py-md-4 py-2 px-4 px-md-0">
-                      <label for="timeWindow">Preferred time window</label>
-                      <div class="form-field">
-                        <div class="select-wrap">
-                          <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                          <select name="timeWindow" id="timeWindow" class="form-control" required>
-                            <option value="">Choose a time window</option>
-                            <option value="morning">Morning (8am–12pm)</option>
-                            <option value="afternoon">Afternoon (12pm–4pm)</option>
-                            <option value="evening">Evening (4pm–7pm)</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-12 col-md d-flex align-items-center align-items-stretch">
-                    <div class="form-group py-md-4 py-2 px-4 px-md-0 d-flex align-items-stretch bg-primary">
-                      <input type="submit" value="Request a Quote" class="btn btn-primary py-3 px-4" />
-                    </div>
+        <div class="row justify-content-center">
+          <div class="col-md-10 ftco-animate">
+            <div class="card-soft p-4 p-md-5">
+              <div class="row align-items-center">
+                <div class="col-md-8">
+                  <span class="subheading">Service Availability</span>
+                  <h2 class="mb-2">Flexible Scheduling & Responsive Support</h2>
+                  <p class="mb-3">
+                    We work for you anytime across Sydney, including 24/7 emergency support when urgent cleaning is required.
+                    For planned services, we offer flexible scheduling to match your timeline and site requirements.
+                  </p>
+
+                  <div class="availability-badge">
+                    <i class="fa fa-clock-o"></i>
+                    <span>Available Anytime • Flexible Scheduling • Fast Response</span>
                   </div>
                 </div>
-              </form>
+                <div class="col-md-4 text-md-right mt-4 mt-md-0">
+                  <a href="contact.html" class="btn btn-primary px-4 py-3 mb-2 w-100">Request a Quote</a>
+                  <a href="tel:+61424211382" class="btn btn-secondary px-4 py-3 w-100">Call Now</a>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Simple note (optional) -->
-            <p class="text-center mt-3 mb-0" style="color:#fff; opacity:.9;">
-              Prefer a quick call? Phone us on <a href="tel:+61424211382" style="color:#fff; text-decoration:underline;">0424 211 382</a>.
+        <!-- Company overview + counters -->
+        <div class="row mt-5">
+          <div class="col-md-6 ftco-animate">
+            <span class="subheading">Who We Are</span>
+            <h2 class="mb-3">Cleaning Standards You Can Rely On</h2>
+            <p>
+              Brighta Property Services delivers professional cleaning and property care across Sydney with a quality-driven operating model.
+              We use defined scopes, checklists, and practical QA controls to keep outcomes consistent across different sites and service types.
+            </p>
+            <p class="mb-0">
+              <a href="about.html" class="btn btn-primary px-4 py-3">Learn More</a>
+              <a href="portfolio.html" class="btn btn-secondary px-4 py-3">View Recent Work</a>
             </p>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- About + Hours (fixed formatting, no Auburn mention) -->
-    <section class="ftco-section ftco-no-pt ftco-no-pb">
-      <div class="container">
-        <div class="row d-flex no-gutters">
-          <div class="col-md-6 d-flex">
-            <div class="img d-flex align-items-center justify-content-center py-5 py-md-0" style="background-image:url(images/about.jpg);">
-              <div class="time-open-wrap">
-                <div class="desc p-4">
-                  <h2>Business Hours</h2>
-                  <div class="opening-hours">
-                    <h4>Opening Days:</h4>
-                    <p class="pl-3">
-                      <span><strong>Monday – Friday:</strong> 9:00am to 8:00pm</span>
-                      <span><strong>Saturday:</strong> 9:00am to 5:00pm</span>
-                    </p>
-                    <h4>Closed:</h4>
-                    <p class="pl-3">
-                      <span>Sundays</span>
-                      <span>Public Holidays</span>
-                    </p>
-                  </div>
-                </div>
-                <div class="desc p-4 bg-secondary">
-                  <h3 class="heading">Need Urgent Support?</h3>
-                  <span class="phone"><a href="tel:+61424211382" style="color:#fff;">0424 211 382</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 pl-md-5 pt-md-5">
-            <div class="row justify-content-start py-5">
-              <div class="col-md-12 heading-section ftco-animate">
-                <span class="subheading">Welcome to Brighta Property Services</span>
-                <h2 class="mb-4">Premium outcomes, consistent delivery</h2>
-                <p>
-                  Brighta Property Services delivers reliable, professional cleaning and ongoing property care for homes, rentals,
-                  and commercial sites across Sydney. We operate a streamlined subcontractor model with defined scopes,
-                  checklists, and quality assurance—so you get consistent outcomes without the overhead.
-                </p>
-              </div>
-            </div>
-
-            <div class="row ftco-counter py-5" id="section-counter">
-              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+          <div class="col-md-6 ftco-animate">
+            <div class="row ftco-counter" id="section-counter">
+              <div class="col-6 d-flex justify-content-center counter-wrap ftco-animate">
                 <div class="block-18">
                   <div class="text"><strong class="number" data-number="5">0</strong></div>
-                  <div class="text"><span>Years of <br />Experience</span></div>
+                  <div class="text"><span>Years <br />Experience</span></div>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+              <div class="col-6 d-flex justify-content-center counter-wrap ftco-animate">
                 <div class="block-18">
                   <div class="text"><strong class="number" data-number="250">0</strong></div>
                   <div class="text"><span>Jobs <br />Completed</span></div>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+              <div class="col-6 d-flex justify-content-center counter-wrap ftco-animate">
                 <div class="block-18">
                   <div class="text"><strong class="number" data-number="30">0</strong></div>
                   <div class="text"><span>Sites <br />Serviced</span></div>
                 </div>
               </div>
+              <div class="col-6 d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18">
+                  <div class="text"><strong class="number" data-number="100">0</strong></div>
+                  <div class="text"><span>Quality <br />Checks</span></div>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Services (replace filler text, more SEO-friendly wording) -->
-    <section class="ftco-section">
+    <!-- Services -->
+    <section class="ftco-section" id="services">
       <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
           <div class="col-md-8 heading-section text-center ftco-animate">
             <span class="subheading">Services</span>
             <h2>Cleaning Services Across Sydney</h2>
-            <p class="mb-0">Select a service below or view the full service list for detailed inclusions.</p>
+            <p class="mb-0">Clear inclusions. Consistent delivery. Built for residential and commercial needs.</p>
           </div>
         </div>
 
@@ -345,7 +319,7 @@
               <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-workplace"></span></div>
               <div class="media-body pl-3">
                 <h3 class="heading">Office & Commercial Cleaning</h3>
-                <p>Reliable ongoing cleans for offices, retail and small-to-mid sites with consistent checklists.</p>
+                <p>Ongoing cleaning for offices and commercial sites with structured checklists and QA.</p>
                 <p><a href="services.html" class="btn-custom">Read more</a></p>
               </div>
             </div>
@@ -356,7 +330,7 @@
               <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-kitchen"></span></div>
               <div class="media-body pl-3">
                 <h3 class="heading">End-of-Lease Cleaning</h3>
-                <p>Thorough vacate cleans aligned to agent expectations to help support bond outcomes.</p>
+                <p>Detail-focused vacate cleaning designed to help meet inspection expectations.</p>
                 <p><a href="services.html" class="btn-custom">Read more</a></p>
               </div>
             </div>
@@ -367,7 +341,7 @@
               <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-rug"></span></div>
               <div class="media-body pl-3">
                 <h3 class="heading">Deep Cleaning</h3>
-                <p>Detail-focused cleaning for kitchens, bathrooms and high-touch areas when you need a reset.</p>
+                <p>High-impact cleaning for kitchens, bathrooms, and high-touch areas.</p>
                 <p><a href="services.html" class="btn-custom">Read more</a></p>
               </div>
             </div>
@@ -378,7 +352,7 @@
               <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-cleaning"></span></div>
               <div class="media-body pl-3">
                 <h3 class="heading">Regular Home Cleaning</h3>
-                <p>Weekly/fortnightly cleaning to keep your home consistently tidy and fresh.</p>
+                <p>Weekly or fortnightly service delivery to keep your home consistently clean.</p>
                 <p><a href="services.html" class="btn-custom">Read more</a></p>
               </div>
             </div>
@@ -389,7 +363,7 @@
               <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-balcony"></span></div>
               <div class="media-body pl-3">
                 <h3 class="heading">Strata & Common Areas</h3>
-                <p>Cleaning for lobbies, hallways and shared spaces with clear scopes and reliable scheduling.</p>
+                <p>Cleaning for lobbies, hallways, and shared areas with reliable scheduling.</p>
                 <p><a href="services.html" class="btn-custom">Read more</a></p>
               </div>
             </div>
@@ -400,132 +374,247 @@
               <div class="icon d-flex justify-content-center align-items-center"><span class="flaticon-vacuum-cleaner"></span></div>
               <div class="media-body pl-3">
                 <h3 class="heading">Move-In / Move-Out Support</h3>
-                <p>Pre-occupancy or post-move cleans to get a property ready for the next stage.</p>
+                <p>Cleaning support to help prepare properties for the next occupant or listing.</p>
                 <p><a href="services.html" class="btn-custom">Read more</a></p>
               </div>
             </div>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Reviews (credible without fake quotes) -->
-    <section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center pb-4">
-          <div class="col-md-10 ftco-animate">
-            <div class="reviews-cta">
-              <div class="row align-items-center">
-                <div class="col-md-8">
-                  <div class="rating">
-                    Reviews & Reputation <span class="stars">★★★★★</span>
-                  </div>
-                  <div class="meta">
-                    We build trust through consistent delivery, clear scopes and quality checks. If you have a Google Business profile link,
-                    add it here to showcase verified customer reviews.
-                  </div>
-                </div>
-                <div class="col-md-4 text-md-right">
-                  <a href="contact.html" class="btn btn-primary px-4 py-3">Request a Quote</a>
-                  <a href="portfolio.html" class="btn btn-secondary px-4 py-3">View Recent Work</a>
-                </div>
-              </div>
-            </div>
-            <p class="text-center mt-3 mb-0" style="color:#666;">
-              Tip: once you share your Google Reviews link, we can wire the “Read Reviews” button to it.
-            </p>
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-8 text-center ftco-animate">
+            <a href="services.html" class="btn btn-primary px-4 py-3">View All Services</a>
+            <a href="contact.html" class="btn btn-secondary px-4 py-3">Request a Quote</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio preview (kept) -->
-    <section class="ftco-section ftco-no-pb">
+    <!-- Our Team (screenshot style) -->
+    <section class="ftco-section bg-light" id="team">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-8 text-center ftco-animate">
+            <span class="subheading">Team & Leadership</span>
+            <h2 class="mb-3">Our Team</h2>
+            <p class="lead">
+              A hands-on leadership team driving consistency, accountability, and service standards across every site.
+            </p>
+            <a href="contact.html" class="btn btn-warning px-4 py-3 mt-3">Talk to Our Team</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4 ftco-animate">
+            <div class="team-card">
+              <div class="team-img" style="background-image:url('images/staff-1.png');"></div>
+              <div class="team-info">
+                <h3>Binaya GC</h3>
+                <span>Commercial Operations Manager</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4 ftco-animate">
+            <div class="team-card">
+              <div class="team-img" style="background-image:url('images/staff-2.png');"></div>
+              <div class="team-info">
+                <h3>Operations Supervisor</h3>
+                <span>Quality & Scheduling</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4 ftco-animate">
+            <div class="team-card">
+              <div class="team-img" style="background-image:url('images/staff-3.png');"></div>
+              <div class="team-info">
+                <h3>Client Support Lead</h3>
+                <span>Bookings & Coordination</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Work -->
+    <section class="ftco-section ftco-no-pb" id="recent-work">
       <div class="container">
         <div class="row justify-content-center pb-5 mb-3">
           <div class="col-md-12 heading-section text-center ftco-animate">
-            <span class="subheading">Our Work</span>
-            <h2>Recent Cleaning Projects</h2>
+            <span class="subheading">Recent Work</span>
+            <h2>Project Highlights</h2>
+            <p class="mb-0">A snapshot of cleaning outcomes delivered across Sydney.</p>
           </div>
         </div>
+
         <div class="row">
-          <!-- Keep your existing 8 work blocks here (unchanged images) -->
-          <!-- ... your existing work items ... -->
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="work img d-flex align-items-center" style="background-image: url(images/work-1.jpg);">
+              <a href="images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
+                <span class="fa fa-expand"></span>
+              </a>
+              <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                <div class="text w-100 mb-3 mt-4">
+                  <h2><a href="portfolio.html">House Cleaning</a></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="work img d-flex align-items-center" style="background-image: url(images/work-2.jpg);">
+              <a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
+                <span class="fa fa-expand"></span>
+              </a>
+              <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                <div class="text w-100 mb-3 mt-4">
+                  <h2><a href="portfolio.html">Window Cleaning</a></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="work img d-flex align-items-center" style="background-image: url(images/work-3.jpg);">
+              <a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
+                <span class="fa fa-expand"></span>
+              </a>
+              <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                <div class="text w-100 mb-3 mt-4">
+                  <h2><a href="portfolio.html">Commercial Clean</a></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="work img d-flex align-items-center" style="background-image: url(images/work-4.jpg);">
+              <a href="images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
+                <span class="fa fa-expand"></span>
+              </a>
+              <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                <div class="text w-100 mb-3 mt-4">
+                  <h2><a href="portfolio.html">End-of-Lease</a></h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-8 text-center ftco-animate">
+            <a href="portfolio.html" class="btn btn-primary px-4 py-3">View All Recent Work</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Blog preview (replace fake 2020 content later) -->
-    <section class="ftco-section">
+    <!-- SEO / Trust description -->
+    <section class="ftco-section bg-light" id="trust">
       <div class="container">
-        <div class="row justify-content-center pb-5 mb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <span class="subheading">News &amp; Blog</span>
-            <h2>Cleaning Tips for Sydney Homes & Businesses</h2>
+        <div class="row justify-content-center pb-4">
+          <div class="col-md-9 heading-section text-center ftco-animate">
+            <span class="subheading">Trust & Quality</span>
+            <h2>Why Clients Choose Brighta</h2>
+            <p class="mb-0">
+              We focus on reliability and operational discipline—so you get predictable outcomes across different service types and locations.
+            </p>
           </div>
         </div>
 
-        <div class="row d-flex">
-          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog.html" class="block-20 rounded" style="background-image: url('images/image_1.jpg');"></a>
-              <div class="text mt-3 px-4">
-                <h3 class="heading"><a href="blog.html">End-of-lease cleaning checklist: what agents expect</a></h3>
-                <p>A practical checklist that helps reduce missed items and supports smooth final inspections.</p>
-              </div>
+        <div class="row">
+          <div class="col-md-4 ftco-animate">
+            <div class="card-soft p-4 h-100">
+              <h3 class="mb-2">Quality Checklists</h3>
+              <p class="mb-0">Defined scopes and practical checklists to improve consistency and reduce missed items.</p>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog.html" class="block-20 rounded" style="background-image: url('images/image_2.jpg');"></a>
-              <div class="text mt-3 px-4">
-                <h3 class="heading"><a href="blog.html">How to keep an office clean between services</a></h3>
-                <p>Simple habits and high-impact touchpoints to keep workspaces presentable throughout the week.</p>
-              </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="card-soft p-4 h-100">
+              <h3 class="mb-2">Fast Response</h3>
+              <p class="mb-0">Responsive coordination and clear communication from enquiry through to completion.</p>
             </div>
           </div>
-
-          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog.html" class="block-20 rounded" style="background-image: url('images/image_3.jpg');"></a>
-              <div class="text mt-3 px-4">
-                <h3 class="heading"><a href="blog.html">Deep clean vs regular clean: what’s the difference?</a></h3>
-                <p>Understand inclusions so you can choose the right service for your property and timing.</p>
-              </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="card-soft p-4 h-100">
+              <h3 class="mb-2">Sydney-Wide Coverage</h3>
+              <p class="mb-0">We service all Sydney areas for residential, end-of-lease and commercial cleaning.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Remove pricing section entirely (done) -->
-    <!-- Remove Google Maps scripts from homepage for performance/SEO (done) -->
+    <!-- Final CTA -->
+    <section class="ftco-section ftco-intro" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-9 text-center ftco-animate">
+            <h2>Need Cleaning Support Across Sydney?</h2>
+            <p class="mb-4">Request a quote or call now for fast response and flexible scheduling.</p>
+            <a href="contact.html" class="btn btn-primary px-4 py-3 mr-2">Request a Quote</a>
+            <a href="tel:+61424211382" class="btn btn-outline-light px-4 py-3">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Sydney Map (end section) -->
+    <section class="ftco-section bg-light" id="map">
+      <div class="container">
+        <div class="row justify-content-center pb-4">
+          <div class="col-md-8 heading-section text-center ftco-animate">
+            <span class="subheading">Service Area</span>
+            <h2>Sydney Coverage Map</h2>
+            <p class="mb-0">Servicing all Sydney areas for residential, end-of-lease, and commercial cleaning.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 ftco-animate">
+            <div class="map-wrap">
+              <iframe
+                title="Sydney map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Sydney%20NSW%20Australia&output=embed"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-md-10 text-center ftco-animate">
+            <p class="mb-0">
+              Call <a href="tel:+61424211382">0424 211 382</a> or email
+              <a href="mailto:info.brightaservices@gmail.com">info.brightaservices@gmail.com</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer ftco-section">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
             <h2 class="footer-heading">Brighta Property Services</h2>
-            <p>
-              Professional cleaning and property care across Sydney. Clear scopes, reliable scheduling, and consistent quality controls.
+            <p class="mini">
+              Professional cleaning and property care across Sydney. Reliable scheduling, responsive support, and quality checklist controls.
             </p>
-            <p class="mb-0"><strong>ABN:</strong> 67 154 216 436</p>
-            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-4">
-              <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+            <p class="mini mb-2"><strong>ABN:</strong> 67 154 216 436</p>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+              <li class="ftco-animate"><a href="#" aria-label="Facebook"><span class="fa fa-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#" aria-label="Instagram"><span class="fa fa-instagram"></span></a></li>
             </ul>
           </div>
 
-          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-            <h2 class="footer-heading">Service Areas</h2>
-            <p class="mb-0">We service all Sydney areas for residential, end-of-lease and commercial cleaning.</p>
-            <p class="mt-3 mb-0"><a href="services.html">View services</a></p>
-            <p class="mb-0"><a href="contact.html">Get a quote</a></p>
-          </div>
-
-          <div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+          <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
             <h2 class="footer-heading">Quick Links</h2>
             <ul class="list-unstyled">
               <li><a href="index.html" class="py-1 d-block">Home</a></li>
@@ -537,37 +626,46 @@
             </ul>
           </div>
 
-          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+          <div class="col-md-6 col-lg-4 mb-4 mb-md-0">
             <h2 class="footer-heading">Contact</h2>
             <div class="block-23 mb-3">
               <ul>
                 <li><span class="icon fa fa-map-marker"></span><span class="text">Sydney, NSW, Australia</span></li>
                 <li><a href="tel:+61424211382"><span class="icon fa fa-phone"></span><span class="text">+61 424 211 382</span></a></li>
                 <li><a href="mailto:info.brightaservices@gmail.com"><span class="icon fa fa-paper-plane"></span><span class="text">info.brightaservices@gmail.com</span></a></li>
+                <li><span class="icon fa fa-id-card"></span><span class="text">ABN: 67 154 216 436</span></li>
               </ul>
             </div>
+
+            <div class="mt-3">
+              <a href="contact.html" class="btn btn-primary px-4 py-3">Request a Quote</a>
+              <a href="tel:+61424211382" class="btn btn-secondary px-4 py-3">Call Now</a>
+            </div>
           </div>
+
         </div>
 
         <div class="row mt-5">
           <div class="col-md-12 text-center">
-            <p class="copyright">
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-              | Template by <a href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a>
+            <p class="legal mb-0">
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+              Brighta Property Services. All rights reserved.
+              <span class="d-block mt-1">Template credit: <a href="https://colorlib.com" target="_blank" rel="noopener">Colorlib</a></span>
             </p>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- loader -->
-    <div id="ftco-loader" class="show fullscreen">
+    <!-- Loader -->
+    <div id="ftco-loader" class="show fullscreen" aria-hidden="true">
       <svg class="circular" width="48px" height="48px">
         <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
       </svg>
     </div>
 
+    <!-- JS -->
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -579,8 +677,6 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/scrollax.min.js"></script>
-
-    <!-- Removed Google Maps scripts from homepage for speed & security -->
     <script src="js/main.js"></script>
   </body>
 </html>
