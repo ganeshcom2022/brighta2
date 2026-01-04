@@ -8,7 +8,7 @@
     <!-- SEO -->
     <meta
       name="description"
-      content="Brighta Property Services delivers residential, end-of-lease and commercial cleaning across Sydney. Fast response, flexible scheduling, 24/7 emergency support, and quality checklist controls."
+      content="Brighta Property Services delivers residential, end-of-lease and commercial cleaning across Sydney. Fast response, flexible scheduling, and quality checklist controls."
     />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#0b1f3a" />
@@ -48,7 +48,10 @@
     </script>
 
     <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
@@ -57,308 +60,432 @@
     <link rel="stylesheet" href="css/flaticon.css" />
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Page-level polish (no framework change) -->
+    <!-- Mobile-first UI Fix + Bigger Logo + Hero Typography Control -->
     <style>
-      :root{
-        --brand-navy:#0b1f3a;
-        --brand-yellow:#f5e84a;
-        --text:#122033;
-        --muted:#5c6674;
-        --card:#ffffff;
-        --line:rgba(11,31,58,.12);
-        --shadow:0 14px 34px rgba(0,0,0,.10);
-        --shadow2:0 18px 44px rgba(0,0,0,.14);
-        --radius:14px;
+      :root {
+        --brand-navy: #0b1f3a;
+        --brand-yellow: #f5e84a;
+        --text: #122033;
+        --muted: #5c6674;
+        --card: #ffffff;
+        --shadow: 0 14px 34px rgba(0, 0, 0, 0.1);
+        --shadow2: 0 18px 44px rgba(0, 0, 0, 0.14);
+        --radius: 14px;
       }
 
-      html{scroll-behavior:smooth;}
-      body{color:var(--text);}
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        color: var(--text);
+      }
 
-      /* Accessibility / focus */
-      a:focus, button:focus{
-        outline: 3px solid rgba(245,232,74,.75);
+      /* Accessibility */
+      a:focus,
+      button:focus {
+        outline: 3px solid rgba(245, 232, 74, 0.75);
         outline-offset: 3px;
       }
 
-      /* Top bar */
-      .wrap{background: #07182f;}
-      .wrap .phone, .wrap .phone a{color:#fff;}
-      .wrap .mailus{opacity:.85; margin-right:6px;}
-      .wrap .social-media a{
-        background: rgba(255,255,255,.10);
-        color:#fff;
-        width:36px; height:36px;
-        border-radius:10px;
-        margin-left:8px;
-        transition: transform .2s ease, background .2s ease;
+      /* Top Bar (more compact + readable on mobile) */
+      .wrap {
+        background: #07182f;
       }
-      .wrap .social-media a:hover{
+      .wrap .phone,
+      .wrap .phone a {
+        color: #fff;
+      }
+      .wrap .phone {
+        font-size: 13px;
+        line-height: 1.25;
+        padding: 10px 0;
+        word-break: break-word;
+      }
+      .wrap .mailus {
+        opacity: 0.85;
+        margin-right: 6px;
+        font-weight: 600;
+      }
+      .wrap .social-media a {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        margin-left: 8px;
+        transition: transform 0.2s ease, background 0.2s ease;
+      }
+      .wrap .social-media a:hover {
         transform: translateY(-2px);
-        background: rgba(255,255,255,.16);
+        background: rgba(255, 255, 255, 0.16);
       }
 
-      /* Navbar brand balance */
-      .navbar-brand{
-        display:flex; align-items:center;
-        gap:10px;
+      /* Navbar + Bigger Logo (balanced, no overflow on mobile) */
+      .ftco-navbar-light {
+        background: #ffffff !important;
       }
-      .navbar-brand img{
-        height: 46px;
-        width:auto;
-        display:block;
+      .navbar-dark .navbar-nav .nav-link {
+        color: #1b2a3a !important;
+        font-weight: 600;
       }
-      .navbar-brand .brand-text{
-        font-weight:800;
-        letter-spacing:.2px;
-        line-height:1;
+      .navbar-dark .navbar-nav .nav-link:hover,
+      .navbar-dark .navbar-nav .nav-item.active > .nav-link {
+        color: var(--brand-navy) !important;
       }
-      .navbar-brand .brand-sub{
-        display:inline-block;
-        font-size:12px;
-        opacity:.92;
-        letter-spacing:.2px;
-        margin-left:6px;
+      .navbar-toggler {
+        border: 0;
+        color: var(--brand-navy) !important;
+      }
+      .navbar-toggler .fa {
+        color: var(--brand-navy) !important;
       }
 
-      /* Navbar “shrink” effect */
-      .ftco-navbar-light.scrolled{
-        box-shadow: 0 10px 26px rgba(0,0,0,.10);
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 0;
+      }
+      .navbar-brand img {
+        height: 62px; /* bigger */
+        width: auto;
+        display: block;
+      }
+      .navbar-brand .brand-text {
+        font-weight: 900;
+        letter-spacing: 0.2px;
+        line-height: 1;
+        color: var(--brand-navy);
+        font-size: 22px;
+      }
+      .navbar-brand .brand-sub {
+        display: block;
+        font-size: 12px;
+        opacity: 0.9;
+        letter-spacing: 0.25px;
+        margin-top: 3px;
+        color: #2b3a4e;
+        font-weight: 700;
+      }
+
+      /* Make logo even larger on desktop while still clean */
+      @media (min-width: 992px) {
+        .navbar-brand img {
+          height: 74px;
+        }
+        .navbar-brand .brand-text {
+          font-size: 24px;
+        }
+        .navbar-brand .brand-sub {
+          font-size: 13px;
+        }
+      }
+
+      /* Navbar “shrink” */
+      .ftco-navbar-light.scrolled {
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(10px);
       }
 
-      /* Hero */
-      .hero-wrap .overlay{
-        background: linear-gradient(90deg, rgba(11,31,58,.78), rgba(11,31,58,.55), rgba(11,31,58,.35));
+      /* Hero Overlay + Fixed Typography (prevents huge text on mobile) */
+      .hero-wrap {
+        position: relative;
       }
-      .hero-wrap h1{
-        letter-spacing:-.3px;
-        text-shadow: 0 18px 34px rgba(0,0,0,.26);
+      .hero-wrap .overlay {
+        background: linear-gradient(
+          90deg,
+          rgba(11, 31, 58, 0.82),
+          rgba(11, 31, 58, 0.58),
+          rgba(11, 31, 58, 0.35)
+        ) !important;
       }
-      .hero-wrap .subheading{
-        display:inline-block;
+      .hero-wrap .slider-text {
+        padding: 72px 0 56px;
+      }
+      .hero-wrap .subheading {
+        display: inline-block;
         padding: 8px 12px;
         border-radius: 999px;
-        background: rgba(245,232,74,.14);
-        border: 1px solid rgba(245,232,74,.30);
+        background: rgba(245, 232, 74, 0.14);
+        border: 1px solid rgba(245, 232, 74, 0.3);
+        font-weight: 700;
+        letter-spacing: 0.2px;
       }
-      .hero-cta-row .btn{margin-right:10px; margin-bottom:10px;}
-      .btn-outline-light{
-        color:#fff;
-        border:1px solid rgba(255,255,255,.75);
+
+      /* Clamp prevents oversized text on iPhone */
+      .hero-wrap h1 {
+        font-weight: 900;
+        letter-spacing: -0.4px;
+        text-shadow: 0 18px 34px rgba(0, 0, 0, 0.26);
+        font-size: clamp(28px, 5.2vw, 48px);
+        line-height: 1.12;
+      }
+      .hero-wrap p {
+        font-size: clamp(14px, 2.8vw, 18px);
+        line-height: 1.55;
+        max-width: 56ch;
+      }
+
+      .hero-cta-row .btn {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        border-radius: 12px;
+      }
+
+      /* Better button sizing on mobile */
+      @media (max-width: 576px) {
+        .hero-cta-row .btn {
+          width: 100%;
+          margin-right: 0;
+        }
+        .hero-wrap .slider-text {
+          padding: 58px 0 40px;
+        }
+        .navbar-brand img {
+          height: 58px; /* still big on mobile */
+        }
+      }
+
+      .btn-outline-light {
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.78);
         background: transparent;
       }
-      .btn-outline-light:hover{background: rgba(255,255,255,.12); color:#fff;}
+      .btn-outline-light:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+      }
 
       /* Trust bar */
-      .trust-bar{
+      .trust-bar {
         margin-top: 16px;
         padding: 10px 12px;
         border-radius: 12px;
-        background: rgba(255,255,255,.10);
-        border: 1px solid rgba(255,255,255,.18);
-        display:flex;
-        flex-wrap:wrap;
-        gap:10px 14px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        max-width: 560px;
       }
-      .trust-item{
-        display:inline-flex;
-        align-items:center;
-        color: rgba(255,255,255,.95);
+      .trust-item {
+        display: inline-flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.95);
         font-size: 14px;
       }
-      .trust-item i{margin-right:8px;}
+      .trust-item i {
+        margin-right: 8px;
+      }
 
-      /* Premium card */
-      .card-soft{
+      /* Premium cards */
+      .card-soft {
         background: var(--card);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
-        border: 1px solid rgba(0,0,0,.04);
+        border: 1px solid rgba(0, 0, 0, 0.04);
       }
 
       /* Services hover */
-      .services{
-        transition: transform .22s ease, box-shadow .22s ease;
+      .services {
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
         border-radius: 12px;
       }
-      .services:hover{
+      .services:hover {
         transform: translateY(-4px);
       }
 
-      /* About/Operations: ops panel overlay on image */
-      .img{position:relative; min-height: 520px;}
-      .ops-panel{
+      /* About/Operations image panel */
+      .img {
+        position: relative;
+        min-height: 520px;
+      }
+      .ops-panel {
         width: min(92%, 430px);
         margin: 0 auto;
-        background: rgba(255,255,255,.92);
-        border: 1px solid rgba(11,31,58,.12);
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(11, 31, 58, 0.12);
         border-radius: 16px;
         box-shadow: var(--shadow);
         padding: 18px 18px 16px;
         backdrop-filter: blur(8px);
       }
-      .ops-panel h2{
+      .ops-panel h2 {
         font-size: 20px;
-        font-weight: 800;
+        font-weight: 900;
         margin-bottom: 6px;
         color: var(--brand-navy);
       }
-      .ops-panel p{color: var(--muted); margin-bottom: 12px;}
-      .ops-bullets{
+      .ops-panel p {
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .ops-bullets {
         margin: 0 0 14px 0;
         padding: 0 0 0 18px;
         color: #233244;
       }
-      .ops-bullets li{margin-bottom: 6px;}
-      .emergency-cta{
-        border-top: 1px dashed rgba(11,31,58,.18);
-        padding-top: 12px;
-      }
-      .emergency-cta .label{
-        font-size: 12px;
-        letter-spacing: .3px;
-        text-transform: uppercase;
-        opacity: .75;
+      .ops-bullets li {
         margin-bottom: 6px;
       }
-      .emergency-cta .phone{
-        display:inline-block;
-        font-weight: 900;
-        font-size: 20px;
-        color: var(--brand-navy);
+      .emergency-cta {
+        border-top: 1px dashed rgba(11, 31, 58, 0.18);
+        padding-top: 12px;
       }
-      .emergency-cta .note{
+      .emergency-cta .label {
+        font-size: 12px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        opacity: 0.75;
+        margin-bottom: 6px;
+      }
+      .emergency-cta .phone {
+        display: inline-block;
+        font-weight: 900;
+        font-size: 18px;
+        color: var(--brand-navy);
+        line-height: 1.2;
+      }
+      .emergency-cta .note {
         margin-top: 6px;
         font-size: 13px;
         color: var(--muted);
       }
-      .emergency-cta .abn{
+      .emergency-cta .abn {
         margin-top: 8px;
         font-size: 13px;
         color: #2b3a4e;
       }
 
-      /* About highlight chips */
-      .about-highlights{
-        display:grid;
+      /* About chips */
+      .about-highlights {
+        display: grid;
         grid-template-columns: 1fr;
         gap: 12px;
         margin-top: 18px;
       }
-      @media (min-width: 992px){
-        .about-highlights{grid-template-columns: 1fr;}
-      }
-      .about-chip{
-        border: 1px solid rgba(11,31,58,.10);
+      .about-chip {
+        border: 1px solid rgba(11, 31, 58, 0.1);
         border-radius: 14px;
         padding: 14px 14px;
-        background: rgba(11,31,58,.03);
+        background: rgba(11, 31, 58, 0.03);
       }
-      .about-chip strong{
-        display:block;
-        font-weight: 800;
+      .about-chip strong {
+        display: block;
+        font-weight: 900;
         color: var(--brand-navy);
         margin-bottom: 4px;
       }
-      .about-chip span{color: var(--muted);}
-
-      /* Team cards: enforce your screenshot-like look even if .staff exists in style.css */
-      .staff{
-        background:#fff;
-        border-radius: 14px;
-        overflow:hidden;
-        box-shadow: var(--shadow);
-        border: 1px solid rgba(0,0,0,.04);
-        transition: transform .25s ease, box-shadow .25s ease;
-        width:100%;
+      .about-chip span {
+        color: var(--muted);
       }
-      .staff:hover{
+
+      /* Team cards */
+      .staff {
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        width: 100%;
+      }
+      .staff:hover {
         transform: translateY(-6px);
         box-shadow: var(--shadow2);
       }
-      .staff .img-wrap{min-height: 320px;}
-      .staff .img{
+      .staff .img-wrap {
+        min-height: 320px;
+      }
+      .staff .img {
         background-size: cover;
         background-position: center;
         min-height: 320px;
       }
-      .staff .text{
+      .staff .text {
         background: var(--brand-yellow);
         padding: 18px 14px 16px !important;
       }
-      .staff h3{
-        margin:0;
+      .staff h3 {
+        margin: 0;
         font-size: 20px;
         font-weight: 900;
         color: #1a1a1a;
       }
-      .team-role{
-        display:inline-block;
+      .team-role {
+        display: inline-block;
         margin-top: 8px;
         font-size: 13px;
         padding: 6px 12px;
         border-radius: 999px;
-        background: rgba(0,0,0,.12);
+        background: rgba(0, 0, 0, 0.12);
         color: #1a1a1a;
-        font-weight: 700;
+        font-weight: 800;
       }
 
-      /* Testimonials: tidy spacing */
-      .testimony-wrap{
+      /* Testimonials */
+      .testimony-wrap {
         border-radius: 14px;
         background: #fff;
-        box-shadow: 0 14px 30px rgba(0,0,0,.08);
-        border: 1px solid rgba(0,0,0,.04);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.04);
       }
-      .testimony-wrap .icon{
-        width:44px; height:44px;
+      .testimony-wrap .icon {
+        width: 44px;
+        height: 44px;
         border-radius: 12px;
-        background: rgba(11,31,58,.08);
+        background: rgba(11, 31, 58, 0.08);
         margin-left: 18px;
       }
 
-      /* Recent work cards */
-      .work{
+      /* Recent work */
+      .work {
         border-radius: 14px;
-        overflow:hidden;
-        box-shadow: 0 14px 30px rgba(0,0,0,.08);
-        border: 1px solid rgba(0,0,0,.04);
-        transition: transform .25s ease, box-shadow .25s ease;
+        overflow: hidden;
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
       }
-      .work:hover{
+      .work:hover {
         transform: translateY(-6px);
-        box-shadow: 0 18px 42px rgba(0,0,0,.12);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.12);
       }
-
-      /* Map */
-      .map-wrap{
-        border-radius: 14px;
-        overflow:hidden;
-        box-shadow: var(--shadow);
-        border: 1px solid rgba(0,0,0,.04);
-      }
-      .map-wrap iframe{width:100%; height: 380px; border:0; display:block;}
 
       /* Footer */
-      .footer .footer-heading{font-weight: 900;}
-      .footer .mini{opacity:.86; font-size: 14px;}
-      .footer .legal{opacity:.80; font-size: 13px;}
-      .footer a{transition: opacity .2s ease;}
-      .footer a:hover{opacity:.85;}
+      .footer .footer-heading {
+        font-weight: 900;
+      }
+      .footer .mini {
+        opacity: 0.86;
+        font-size: 14px;
+      }
+      .footer .legal {
+        opacity: 0.8;
+        font-size: 13px;
+      }
 
-      /* Animation system */
-      .reveal{
+      /* Reveal animation */
+      .reveal {
         opacity: 0;
         transform: translateY(14px);
       }
-      .reveal.is-visible{
+      .reveal.is-visible {
         opacity: 1;
         transform: none;
       }
-      @media (prefers-reduced-motion: reduce){
-        html{scroll-behavior:auto;}
-        .reveal{opacity:1; transform:none;}
-        .animated{animation: none !important;}
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+        .animated {
+          animation: none !important;
+        }
       }
     </style>
   </head>
@@ -370,20 +497,29 @@
         <div class="row justify-content-between">
           <div class="col-12 col-md d-flex align-items-center">
             <p class="mb-0 phone">
-              <span class="mailus">Phone:</span> <a href="tel:+61424211382">0424 211 382 / 0451 229 244</a>
+              <span class="mailus">Phone:</span>
+              <a href="tel:+61424211382">0424 211 382</a>
+              <span class="d-none d-md-inline"> / </span>
+              <a href="tel:+61451229244">0451 229 244</a>
+
               <span class="d-none d-md-inline"> | </span>
-              <span class="mailus">Email:</span> <a href="mailto:info.brightaservices@gmail.com">info.brightaservices@gmail.com</a>
+              <span class="mailus">Email:</span>
+              <a href="mailto:info.brightaservices@gmail.com">info.brightaservices@gmail.com</a>
+
               <span class="d-none d-md-inline"> | </span>
-              <span class="mailus">ABN:</span> <span>67 154 216 436</span>
+              <span class="mailus">ABN:</span>
+              <span>67154216436</span>
             </p>
           </div>
+
           <div class="col-12 col-md d-flex justify-content-md-end">
             <div class="social-media">
               <p class="mb-0 d-flex">
-                <a href="#" class="d-flex align-items-center justify-content-center" aria-label="Facebook">
+                <!-- Put real links when ready. For now, no jump-to-top -->
+                <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center" aria-label="Facebook">
                   <span class="fa fa-facebook"><i class="sr-only">Facebook</i></span>
                 </a>
-                <a href="#" class="d-flex align-items-center justify-content-center" aria-label="Instagram">
+                <a href="javascript:void(0)" class="d-flex align-items-center justify-content-center" aria-label="Instagram">
                   <span class="fa fa-instagram"><i class="sr-only">Instagram</i></span>
                 </a>
               </p>
@@ -394,17 +530,25 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.html" aria-label="Brighta Property Services home">
           <img src="images/brighta-logo.png" alt="Brighta Property Services logo" />
-          <div class="d-flex align-items-baseline">
-            <span class="brand-text">Brighta</span>
-            <span class="brand-sub">Property Services</span>
+          <div>
+            <div class="brand-text">BRIGHTA</div>
+            <div class="brand-sub">PROPERTY SERVICES</div>
           </div>
         </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#ftco-nav"
+          aria-controls="ftco-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="fa fa-bars"></span> Menu
         </button>
 
@@ -423,7 +567,7 @@
     <!-- END nav -->
 
     <!-- Hero -->
-    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg')" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
@@ -436,9 +580,9 @@
               </p>
 
               <div class="hero-cta-row">
-                <a href="contact.html" class="btn btn-primary py-2 px-4">REQUEST A QUOTE</a>
-                <a href="tel:+61424211382" class="btn btn-outline-light py-2 px-4">CALL NOW</a>
-                <a href="services.html" class="btn btn-secondary py-2 px-4">VIEW SERVICES</a>
+                <a href="contact.html" class="btn btn-primary py-3 px-4">REQUEST A QUOTE</a>
+                <a href="tel:+61424211382" class="btn btn-outline-light py-3 px-4">CALL NOW</a>
+                <a href="services.html" class="btn btn-secondary py-3 px-4">VIEW SERVICES</a>
               </div>
 
               <div class="trust-bar" aria-label="Trust signals">
@@ -561,9 +705,8 @@
     <section class="ftco-section ftco-no-pt ftco-no-pb" id="about-ops">
       <div class="container">
         <div class="row d-flex no-gutters">
-          <!-- Left visual + operations panel -->
           <div class="col-md-6 d-flex">
-            <div class="img d-flex align-items-center justify-content-center py-5 py-md-0" style="background-image:url(images/about.jpg);">
+            <div class="img d-flex align-items-center justify-content-center py-5 py-md-0" style="background-image: url(images/about.jpg)">
               <div class="ops-panel reveal" data-animate="fadeInUp">
                 <div class="ops-head">
                   <h2>24/7 Operations &amp; Emergency Support</h2>
@@ -581,7 +724,10 @@
 
                 <div class="emergency-cta">
                   <div class="label">Operations line</div>
-                  <a class="phone" href="tel:+61424211382">0424 211 382 / 0451 229 244</a>
+                  <div class="phone">
+                    <a href="tel:+61424211382">0424 211 382</a> /
+                    <a href="tel:+61451229244">0451 229 244</a>
+                  </div>
                   <div class="note">Fast response for urgent requests.</div>
                   <div class="abn"><strong>ABN:</strong> 67 154 216 436</div>
                 </div>
@@ -589,7 +735,6 @@
             </div>
           </div>
 
-          <!-- Right content -->
           <div class="col-md-6 pl-md-5 pt-md-5">
             <div class="row justify-content-start py-5">
               <div class="col-md-12 heading-section">
@@ -620,43 +765,31 @@
               </div>
             </div>
 
-            <!-- Counters -->
+            <!-- Counters (kept realistic; add ftco-animate to work with theme scripts) -->
             <div class="row ftco-counter py-5" id="section-counter">
-              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap">
+              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
                 <div class="reveal" data-animate="fadeInUp">
                   <div class="block-18">
-                    <div class="text">
-                      <strong class="number" data-number="1">0</strong>
-                    </div>
-                    <div class="text">
-                      <span>Years of <br />Experience</span>
-                    </div>
+                    <div class="text"><strong class="number" data-number="1">0</strong></div>
+                    <div class="text"><span>Years of <br />Experience</span></div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap">
+              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
                 <div class="reveal" data-animate="fadeInUp">
                   <div class="block-18">
-                    <div class="text">
-                      <strong class="number" data-number="100">0</strong>
-                    </div>
-                    <div class="text">
-                      <span>Happy <br />Customers</span>
-                    </div>
+                    <div class="text"><strong class="number" data-number="100">0</strong></div>
+                    <div class="text"><span>Happy <br />Customers</span></div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap">
+              <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
                 <div class="reveal" data-animate="fadeInUp">
                   <div class="block-18">
-                    <div class="text">
-                      <strong class="number" data-number="30">0</strong>
-                    </div>
-                    <div class="text">
-                      <span>Buildings <br />Cleaned</span>
-                    </div>
+                    <div class="text"><strong class="number" data-number="30">0</strong></div>
+                    <div class="text"><span>Buildings <br />Cleaned</span></div>
                   </div>
                 </div>
               </div>
@@ -685,7 +818,7 @@
           <div class="col-md-4 col-lg-3 d-flex">
             <div class="staff reveal" data-animate="fadeInUp">
               <div class="img-wrap d-flex align-items-stretch">
-                <div class="img align-self-stretch" style="background-image: url(images/staff-1.png);"></div>
+                <div class="img align-self-stretch" style="background-image: url(images/staff-1.png)"></div>
               </div>
               <div class="text text-center">
                 <h3>Binaya GC</h3>
@@ -697,7 +830,7 @@
           <div class="col-md-4 col-lg-3 d-flex">
             <div class="staff reveal" data-animate="fadeInUp">
               <div class="img-wrap d-flex align-items-stretch">
-                <div class="img align-self-stretch" style="background-image: url(images/staff-2.png);"></div>
+                <div class="img align-self-stretch" style="background-image: url(images/staff-2.png)"></div>
               </div>
               <div class="text text-center">
                 <h3>Peter Joshi</h3>
@@ -709,7 +842,7 @@
           <div class="col-md-4 col-lg-3 d-flex">
             <div class="staff reveal" data-animate="fadeInUp">
               <div class="img-wrap d-flex align-items-stretch">
-                <div class="img align-self-stretch" style="background-image: url(images/staff-3.png);"></div>
+                <div class="img align-self-stretch" style="background-image: url(images/staff-3.png)"></div>
               </div>
               <div class="text text-center">
                 <h3>Ganesh Khatri</h3>
@@ -717,7 +850,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
@@ -738,7 +870,6 @@
         <div class="row">
           <div class="col-md-12">
             <div class="carousel-testimony owl-carousel ftco-owl reveal" data-animate="fadeInUp">
-
               <div class="item">
                 <div class="testimony-wrap py-4">
                   <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-right"></span></div>
@@ -850,8 +981,8 @@
                   </div>
                 </div>
               </div>
-
-            </div><!-- /carousel -->
+            </div>
+            <!-- /carousel -->
           </div>
         </div>
       </div>
@@ -872,7 +1003,7 @@
 
         <div class="row">
           <div class="col-md-6 col-lg-3">
-            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-1.jpg);">
+            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-1.jpg)">
               <a href="images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
                 <span class="fa fa-expand"></span>
               </a>
@@ -885,7 +1016,7 @@
           </div>
 
           <div class="col-md-6 col-lg-3">
-            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-2.jpg);">
+            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-2.jpg)">
               <a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
                 <span class="fa fa-expand"></span>
               </a>
@@ -898,7 +1029,7 @@
           </div>
 
           <div class="col-md-6 col-lg-3">
-            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-3.jpg);">
+            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-3.jpg)">
               <a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
                 <span class="fa fa-expand"></span>
               </a>
@@ -911,7 +1042,7 @@
           </div>
 
           <div class="col-md-6 col-lg-3">
-            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-4.jpg);">
+            <div class="work img d-flex align-items-center reveal" data-animate="fadeInUp" style="background-image: url(images/work-4.jpg)">
               <a href="images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center" aria-label="Open image">
                 <span class="fa fa-expand"></span>
               </a>
@@ -934,7 +1065,7 @@
       </div>
     </section>
 
-    <!-- SEO / Trust -->
+    <!-- Trust -->
     <section class="ftco-section bg-light" id="trust">
       <div class="container">
         <div class="row justify-content-center pb-4">
@@ -973,7 +1104,7 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="ftco-section ftco-intro" style="background-image: url('images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+    <section class="ftco-section ftco-intro" style="background-image: url('images/bg_3.jpg')" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">
@@ -988,7 +1119,8 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->
+
+    <!-- Footer (No Map) -->
     <footer class="footer ftco-section">
       <div class="container">
         <div class="row">
@@ -999,8 +1131,8 @@
             </p>
             <p class="mini mb-2"><strong>ABN:</strong> 67 154 216 436</p>
             <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-              <li class="ftco-animate"><a href="#" aria-label="Facebook"><span class="fa fa-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#" aria-label="Instagram"><span class="fa fa-instagram"></span></a></li>
+              <li class="ftco-animate"><a href="javascript:void(0)" aria-label="Facebook"><span class="fa fa-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="javascript:void(0)" aria-label="Instagram"><span class="fa fa-instagram"></span></a></li>
             </ul>
           </div>
 
@@ -1021,8 +1153,14 @@
             <div class="block-23 mb-3">
               <ul>
                 <li><span class="icon fa fa-map-marker"></span><span class="text">Sydney, NSW, Australia</span></li>
-                <li><a href="tel:+61424211382"><span class="icon fa fa-phone"></span><span class="text">+61 424 211 382</span></a></li>
-                <li><a href="mailto:info.brightaservices@gmail.com"><span class="icon fa fa-paper-plane"></span><span class="text">info.brightaservices@gmail.com</span></a></li>
+                <li>
+                  <a href="tel:+61424211382"><span class="icon fa fa-phone"></span><span class="text">0424 211 382</span></a>
+                  <span class="d-inline-block" style="opacity:.6;">  </span>
+                  <a href="tel:+61451229244"><span class="text">    0451 229 244</span></a>
+                </li>
+                <li>
+                  <a href="mailto:info.brightaservices@gmail.com"><span class="icon fa fa-paper-plane"></span><span class="text">info.brightaservices@gmail.com</span></a>
+                </li>
                 <li><span class="icon fa fa-id-card"></span><span class="text">ABN: 67 154 216 436</span></li>
               </ul>
             </div>
@@ -1067,42 +1205,33 @@
     <script src="js/scrollax.min.js"></script>
     <script src="js/main.js"></script>
 
-    <!-- Extra animation + UX reliability (safe additive layer) -->
+    <!-- Extra animation + navbar polish -->
     <script>
       (function () {
-        // IntersectionObserver reveal (uses animate.css classes)
         var items = document.querySelectorAll(".reveal");
-        if (!items.length) return;
-
         var prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        if (prefersReduced) {
-          items.forEach(function (el) {
-            el.classList.add("is-visible");
-          });
-          return;
+        if (items.length) {
+          if (prefersReduced) {
+            items.forEach(function (el) { el.classList.add("is-visible"); });
+          } else {
+            var observer = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  if (!entry.isIntersecting) return;
+                  var el = entry.target;
+                  var anim = el.getAttribute("data-animate") || "fadeInUp";
+                  el.classList.add("is-visible", "animated", anim);
+                  observer.unobserve(el);
+                });
+              },
+              { threshold: 0.16 }
+            );
+            items.forEach(function (el) { observer.observe(el); });
+          }
         }
 
-        var observer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (!entry.isIntersecting) return;
-
-              var el = entry.target;
-              var anim = el.getAttribute("data-animate") || "fadeInUp";
-
-              el.classList.add("is-visible", "animated", anim);
-              observer.unobserve(el);
-            });
-          },
-          { threshold: 0.16 }
-        );
-
-        items.forEach(function (el) {
-          observer.observe(el);
-        });
-
-        // Navbar scrolled class (visual polish)
+        // Navbar scrolled class
         var nav = document.getElementById("ftco-navbar");
         if (nav) {
           var onScroll = function () {
